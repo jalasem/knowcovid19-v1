@@ -9,6 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "deploy": "now --token W54u5MDkbtHnuGp9aNCPpCTR --prod && now --token W54u5MDkbtHnuGp9aNCPpCTR alias ebidhaang.org && now --token W54u5MDkbtHnuGp9aNCPpCTR alias www.ebidhaang.org",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },

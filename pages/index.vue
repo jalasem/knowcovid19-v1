@@ -2,16 +2,21 @@
   <div class="page home">
     <nav>
       <nuxt-link to="/" class="brand-logo">
-        KnowCOVID19
+        KnowCOVID19.
+        <sub>ng</sub>
       </nuxt-link>
       <div class="nav-group">
+        <a href="#">Analytics</a>
+        <a href="#">Facts</a>
         <a href="#">Helpline</a>
-        <a href="#">Report</a>
-        <a href="#">Supplies/Tracking</a>
+        <!-- <a href="#">Supplies/Tracking</a> -->
         <a href="#">About</a>
       </div>
       <div class="nav-group social">
-        <a href="#">
+        <a href="#" class="bg-orange-300 text-white rounded py-1 px-2"
+          >Report a case
+        </a>
+        <!-- <a href="#">
           <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
         </a>
         <a href="#">
@@ -19,7 +24,7 @@
         </a>
         <a href="#">
           <img src="/vectors/linkedin.svg" alt="twitter" class="icon" />
-        </a>
+        </a> -->
       </div>
     </nav>
     <main>
@@ -64,7 +69,7 @@
             </p>
           </div>
         </div>
-        <div v-for="i in 3" :key="i" class="box">
+        <div v-for="i in 0" :key="i" class="box">
           <header>COVID19 Cases (Dummy)</header>
           <div class="content">
             <p class="mb-2">
@@ -84,17 +89,23 @@
             </p>
           </div>
         </div>
+        <div class="box checker">
+          <header>Quick Question</header>
+          <div class="content">
+            <corona-checker />
+          </div>
+        </div>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
+import CoronaChecker from '~/components/widgets/CoronaChecker.vue'
 
 export default {
   components: {
-    // Logo
+    CoronaChecker
   }
 }
 </script>
@@ -111,14 +122,23 @@ export default {
     @apply flex justify-between h-16 items-center border-b border-2 px-4 fixed top-0 left-0 w-full;
 
     .brand-logo {
-      @apply text-xl font-medium;
+      @apply text-xl font-medium relative;
+      color: $primary;
+
+      sub {
+        @apply absolute;
+        right: -1rem;
+        bottom: 47%;
+        font-size: 70%;
+        color: $tertiary;
+      }
     }
 
     .nav-group {
       @apply flex items-center;
 
       a {
-        @apply px-2;
+        @apply px-2 font-medium;
         color: $primary;
 
         &:hover {
@@ -137,6 +157,10 @@ export default {
 
     .box {
       @apply flex-grow;
+
+      &.checker {
+        @apply max-w-md;
+      }
     }
   }
 }
