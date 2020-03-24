@@ -7,20 +7,20 @@
     </nuxt-link>
     <div class="social">
       <a href="#">
-        <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
+        <img src="/images/twitter.png" alt="twitter" class="icon" />
       </a>
       <a href="#">
-        <img src="/vectors/facebook.svg" alt="fb" class="icon" />
+        <img src="/images/facebook.png" alt="fb" class="icon" />
       </a>
       <a href="#">
-        <img src="/vectors/linkedin.svg" alt="linkedin" class="icon" />
+        <img src="/images/linkedin.png" alt="linkedin" class="icon" />
       </a>
       <a
         rel="noopener noreferrer"
         target="_blank"
         href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.now.sh"
       >
-        <img src="/vectors/whatsapp.svg" alt="whatsapp" class="icon" />
+        <img src="/images/whatsapp.png" alt="whatsapp" class="icon" />
       </a>
     </div>
   </footer>

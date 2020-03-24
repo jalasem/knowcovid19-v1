@@ -29,8 +29,8 @@
           <div
             class="col-span-4 grid gap-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1"
           >
-            <template v-for="(stat, statIndex) in majorStats">
-              <div :key="`major-dashboard-stat-${statIndex}`" class="stat-box">
+            <template v-for="(stat, statKey) of computedMajorStats">
+              <div :key="`major-dashboard-stat-${statKey}`" class="stat-box">
                 <p class="stat-heading" v-text="stat.heading" />
                 <p class="stat-quantity">
                   <span class="main" v-text="stat.quantity" />
@@ -51,40 +51,84 @@
             <div
               class="content py-4 px-6 flex-grow flex flex-col justify-center"
             >
-              <template v-if="!showChecker">
-                <p class="text-2xl font-medium text-center mb-3">
-                  Check to ascertain your risk level and determine if you might
-                  need the helpline or not
-                </p>
-                <span class="font-normal italic text-center block text-sm"
-                  >(Will take less than 2mins)</span
-                >
+              <p class="text-2xl font-medium text-center mb-3">
+                Check to ascertain your risk level and determine if you might
+                need the helpline or not
+              </p>
+              <span class="font-normal italic text-center block text-sm"
+                >(Will take less than 2mins)</span
+              >
 
-                <button
-                  class="block mx-auto px-10 rounded-full text-xl font-medium py-2 mt-4 bg-indigo-700 text-white"
-                >
-                  Start
-                </button>
-              </template>
-              <corona-checker v-else />
-            </div>
-          </div>
-          <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1">
-            <header>Cases per state</header>
-            <div class="content h-64">
-              pie chart
+              <nuxt-link
+                to="/risk-checker"
+                tag="button"
+                class="block focus:outline-none mx-auto px-10 rounded-full text-xl font-medium py-2 mt-4 bg-indigo-700 text-white"
+              >
+                Start
+              </nuxt-link>
+              <corona-checker v-if="showChecker" />
             </div>
           </div>
           <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2">
+            <header>Cases per state</header>
+            <div class="content flex justify-center">
+              <apexchart
+                type="donut"
+                width="380"
+                :options="chartOptions"
+                :series="series"
+              />
+            </div>
+          </div>
+          <!-- <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1">
             <header>Age and Gender Distribution</header>
             <div class="content h-64">
               chart shows here
             </div>
-          </div>
-          <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1">
+          </div> -->
+          <div
+            class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 flex flex-col items-stretch"
+          >
             <header>Infection Sources</header>
-            <div class="content h-64">
-              pie chart shows here
+            <div class="content overflow-y-auto case-source-wrapper">
+              <div
+                v-for="(source, sourceIndex) in infectionSources"
+                :key="`dashboard-infection_source-${sourceIndex}`"
+                class="case-source"
+              >
+                <img
+                  v-if="isFlight(source)"
+                  src="/images/flight.png"
+                  alt="flight"
+                  class="h-10 mr-2"
+                />
+                <img
+                  v-if="source.bank"
+                  src="/images/bank.png"
+                  alt="bank"
+                  class="h-10 mr-2"
+                />
+                <div class="info flex">
+                  <div class="flex-grow">
+                    <p v-if="source.on">On {{ source.on }}</p>
+                    <p>
+                      <span
+                        class="text-xl font-medium block"
+                        v-text="source.main"
+                      />
+                      <span v-text="source.info" />
+                    </p>
+                  </div>
+                  <div class="action flex items-center">
+                    <button
+                      v-if="source.actionText"
+                      v-ripple
+                      class="bg-indigo-800 text-white hover:bg-orange-600 focus:outline-none py-1 px-2 rounded"
+                      v-text="source.actionText"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-3">
@@ -232,29 +276,338 @@ export default {
     showChecker: false,
     currentSegment: 'Nigeria',
     dataSegments: ['Nigeria', 'Africa', 'Worldwide'],
-    majorStats: [
-      {
+    majorStats: {
+      total: {
         heading: 'Total Cases',
-        quantity: 40,
-        info: '25 in ICU'
+        quantity: 44,
+        info: '1st case: 27/02/2020'
       },
-      {
+      hospitalized: {
         heading: 'Currently Hospitalized',
-        quantity: 38,
-        info: '92.6 of total cases'
+        quantity: 41
       },
-      {
+      deaths: {
         heading: 'Deaths',
-        quantity: 1,
-        info: '3% of total cases'
+        quantity: 1
+      },
+      discharged: {
+        heading: 'Discharged',
+        quantity: 2
+      }
+    },
+    caseHistory: [
+      {
+        date: '27-02-2020',
+        total: 1,
+        newCases: 1,
+        hospitalized: 1,
+        discharged: 0,
+        deaths: 0,
+        states: [{ lagos: 1 }]
+      },
+
+      {
+        date: '09-03-2020',
+        total: 2,
+        newCases: 1,
+        hospitalized: 2,
+        discharged: 0,
+        deaths: 0,
+        states: [{ lagos: 1 }, { ogun: 1 }]
+      },
+
+      {
+        date: '17-03-2020',
+        total: 3,
+        newCases: 1,
+        hospitalized: 3,
+        discharged: 0,
+        deaths: 0,
+        states: [{ lagos: 2 }, { ogun: 1 }]
+      },
+
+      {
+        date: '18-03-2020',
+        total: 8,
+        newCases: 5,
+        hospitalized: 8,
+        discharged: 0,
+        deaths: 0,
+        states: [{ lagos: 7 }, { ogun: 1 }]
+      },
+
+      {
+        date: '19-03-2020',
+        total: 12,
+        newCases: 4,
+        hospitalized: 12,
+        discharged: 0,
+        deaths: 0,
+        states: [{ lagos: 11 }, { ogun: 1 }]
+      },
+
+      {
+        date: '21-03-2020',
+        total: 22,
+        newCases: 10,
+        hospitalized: 22,
+        discharged: 0,
+        deaths: 0,
+        states: [{ lagos: 18 }, { ogun: 1 }, { FCT: 3 }]
+      },
+
+      {
+        date: '22-03-2020',
+        total: 25,
+        newCases: 3,
+        hospitalized: 25,
+        discharged: 2,
+        deaths: 0,
+        states: [{ lagos: 19 }, { FCT: 3 }, { ogun: 2 }, { ekiti: 1 }]
+      },
+
+      {
+        date: '22-03-2020',
+        total: 26,
+        newCases: 1,
+        hospitalized: 26,
+        discharged: 2,
+        deaths: 0,
+        states: [
+          { lagos: 19 },
+          { FCT: 3 },
+          { ogun: 2 },
+          { oyo: 1 },
+          { ekiti: 1 }
+        ]
+      },
+
+      {
+        date: '22-03-2020',
+        total: 27,
+        newCases: 1,
+        hospitalized: 27,
+        discharged: 2,
+        deaths: 0,
+        states: [
+          { lagos: 19 },
+          { FCT: 4 },
+          { ogun: 2 },
+          { oyo: 1 },
+          { ekiti: 1 }
+        ]
+      },
+
+      {
+        date: '22-03-2020',
+        total: 30,
+        newCases: 3,
+        hospitalized: 30,
+        discharged: 2,
+        deaths: 0,
+        states: [
+          { lagos: 22 },
+          { FCT: 4 },
+          { ogun: 2 },
+          { oyo: 1 },
+          { ekiti: 1 }
+        ]
+      },
+
+      {
+        date: '23-03-2020',
+        total: 35,
+        newCases: 5,
+        hospitalized: 35,
+        discharged: 2,
+        deaths: 0,
+        states: [
+          { lagos: 24 },
+          { FCT: 6 },
+          { ogun: 2 },
+          { oyo: 1 },
+          { ekiti: 1 },
+          { edo: 1 }
+        ]
+      },
+
+      {
+        date: '23-03-2020',
+        total: 36,
+        newCases: 1,
+        hospitalized: 36,
+        discharged: 2,
+        deaths: 0,
+        states: [
+          { lagos: 25 },
+          { FCT: 6 },
+          { ogun: 2 },
+          { oyo: 1 },
+          { ekiti: 1 },
+          { edo: 1 }
+        ]
+      },
+
+      {
+        date: '23-03-2020',
+        total: 40,
+        newCases: 4,
+        hospitalized: 40,
+        discharged: 2,
+        deaths: 1,
+        states: [
+          { lagos: 28 },
+          { FCT: 7 },
+          { ogun: 2 },
+          { oyo: 1 },
+          { ekiti: 1 },
+          { edo: 1 }
+        ]
+      }
+    ],
+    series: [29, 8, 3, 1, 1, 1, 1],
+    chartOptions: {
+      chart: {
+        width: 380,
+        type: 'donut'
+      },
+      dataLabels: {
+        enabled: false
+      },
+      labels: ['Lagos', 'FCT', 'Ogun', 'Ekiti', 'Oyo', 'Edo', 'Bauchi'],
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              show: false
+            }
+          }
+        }
+      ],
+      legend: {
+        position: 'right',
+        offsetY: 0,
+        height: 230
+      }
+    },
+    infectionSources: [
+      {
+        main: "Residents of Atiku Abubakar's Estate",
+        info: 'Tassle Palm'
       },
       {
-        heading: 'Discharged',
-        quantity: 2,
-        info: '7.4% of total cases'
+        on: '20/03/2020',
+        main: 'Flight BA75',
+        info: 'Arrived to Lagos from UK',
+        actionText: 'I was on this flight'
+      },
+      {
+        main: 'Aero Contractor Flight',
+        info: "From Lagos to Abuja with Atiku's Son or Bauchi Governor",
+        on: '18/03/2020',
+        actionText: 'I was on this flight'
+      },
+      {
+        main: 'Direct or indirect contact with Bauchi State Governor',
+        info:
+          "Attended Press conference with Bauchi State Governor, or have been in contact with a Gov't official who has been in the same premises as the Governor"
+      },
+      {
+        main: 'The launch of 2500 Housing units',
+        info: 'Bauchi State'
+      },
+      {
+        info:
+          "NEC meeting with Bauchi State Gov't, or are in close proximity with someone who did"
+      },
+      {
+        info:
+          'You just returned from UK, FRANCE, SPAIN, NETHERLANDS, GERMANY, UAE, CANADA, USA, in the last two weeks',
+        actionText: 'Yes',
+        flight: true
+      },
+      {
+        main: 'Flight TK625',
+        info: 'Arrival date: 13th of march'
+      },
+      {
+        main: 'Flight KLM 587',
+        info: 'Arrival date: 18th of march'
+      },
+      {
+        main: 'Flight KL0582/KL0587',
+        info: 'London-Amsterdam-Lagos'
+      },
+      {
+        main: 'Virgin Atlantic VS411 & Lufthansa flight LLH568',
+        info: 'To Lagos',
+        on: '13th of march'
+      },
+      {
+        main: 'Turkish Flight TK 625',
+        on: '14th of march'
+      },
+      {
+        main: 'Virgin Atlantic VS411',
+        flight: true
+      },
+      {
+        main: 'BA Flight 0083',
+        on: '20th of march'
+      },
+      {
+        info:
+          'Recently came into Nigeria from any country with recorded cases of COVID-19',
+        flight: true
+      },
+      {
+        main: 'Visited Access Bank, Ligalu Ayorinde Branch, Lagos',
+        on: '16th of march',
+        bank: true
+      },
+      {
+        main: 'Had a contact with Alh. Aliko Dangote and Alhaji Ladan Salihu',
+        info: 'Anytime from 18th March'
       }
     ]
-  })
+  }),
+  computed: {
+    computedMajorStats() {
+      const statObj = this.majorStats
+
+      statObj.hospitalized.info = `${(
+        (statObj.hospitalized.quantity / statObj.total.quantity) *
+        100
+      ).toPrecision(2)}% of total cases`
+
+      statObj.deaths.info = `${(
+        (statObj.deaths.quantity / statObj.total.quantity) *
+        100
+      ).toPrecision(2)}% of total cases`
+
+      statObj.discharged.info = `${(
+        (statObj.discharged.quantity / statObj.total.quantity) *
+        100
+      ).toPrecision(2)}% of total cases`
+
+      return statObj
+    }
+  },
+  methods: {
+    isFlight(source) {
+      const { main, info } = source
+
+      return (
+        (main && main.toLowerCase().includes('flight')) ||
+        (info && info.toLowerCase().includes('flight')) ||
+        source.flight
+      )
+    }
+  }
 }
 </script>
 
@@ -305,6 +658,32 @@ export default {
 
       &:hover {
         @apply shadow;
+      }
+    }
+
+    .case-source-wrapper {
+      @apply relative flex-grow border-l-2 border-orange-400 ml-4;
+      max-height: 20rem;
+
+      // &:before {
+      //   @apply h-full border-l-2 border-orange-400 absolute top-0;
+      //   content: '';
+      //   left: 1rem;
+      // }
+    }
+
+    .case-source {
+      @apply border py-1 px-2 mb-2 ml-2 relative flex items-center;
+
+      .info {
+        @apply flex-grow;
+      }
+
+      &:before {
+        @apply top-0 left-0 w-3 h-3 bg-red-700 rounded-full absolute;
+        content: '';
+        margin-top: 1.5rem;
+        margin-left: -1.3rem;
       }
     }
   }

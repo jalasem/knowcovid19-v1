@@ -49,12 +49,13 @@ export default {
     tooltipX: 0,
     tooltipY: 0,
     coronaStats: [
-      { state: 'Lagos', total: 28 },
-      { state: 'FCT', total: 7 },
-      { state: 'Ogun', total: 2 },
+      { state: 'Lagos', total: 29 },
+      { state: 'FCT', total: 8 },
+      { state: 'Ogun', total: 3 },
       { state: 'Ekiti', total: 1 },
       { state: 'Oyo', total: 1 },
-      { state: 'Edo', total: 1 }
+      { state: 'Edo', total: 1 },
+      { state: 'Bauchi', total: 1 }
     ],
     states: [
       {
@@ -369,7 +370,8 @@ export default {
     path {
       // fill: $green;
       fill: #f7f7f7;
-      stroke: $tertiary;
+      // stroke: $tertiary;
+      stroke: $primary;
       stroke-width: 1px;
       transition: fill 0.3s ease-in-out;
 

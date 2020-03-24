@@ -3,7 +3,7 @@
     <div class="flex items-center">
       <div class="flex items-center md:hidden" @click="toggleMenu">
         <img
-          src="/vectors/menu.svg"
+          src="/images/menu.png"
           alt="menu"
           class="menu-toggle h-6 w-6 mr-3 cursor-pointer"
           :class="{ open: menuOpen }"
@@ -32,13 +32,13 @@
         Report a case
       </button>
       <!-- <a href="#">
-          <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
+          <img src="/images/twitter.png" alt="twitter" class="icon" />
         </a>
         <a href="#">
-          <img src="/vectors/facebook.svg" alt="twitter" class="icon" />
+          <img src="/images/facebook.png" alt="twitter" class="icon" />
         </a>
         <a href="#">
-          <img src="/vectors/linkedin.svg" alt="twitter" class="icon" />
+          <img src="/images/linkedin.png" alt="twitter" class="icon" />
         </a> -->
     </div>
     <aside :class="{ open: menuOpen }">
@@ -49,7 +49,7 @@
         </nuxt-link>
         <div @click="toggleMenu">
           <img
-            src="/vectors/close.svg"
+            src="/images/close.png"
             alt="menu"
             class="menu-toggle h-4 w-4 ml-8 cursor-pointer"
           />
@@ -82,7 +82,7 @@ export default {
 
 <style lang="scss" scoped>
 nav {
-  @apply bg-white flex justify-between h-16 items-center border-b border-2 px-4 fixed top-0 left-0 w-full;
+  @apply bg-white flex justify-between h-16 items-center border-b border-2 px-4 fixed top-0 left-0 w-full z-50;
 
   .menu-toggle.open {
     transform: rotate(90deg);

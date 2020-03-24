@@ -1,0 +1,29 @@
+[
+	{date: '27-02-2020', total:1, newCases:1, hospitalized:1, discharged:0, deaths: 0,  states:[{lagos:1}]},
+
+	{date: '09-03-2020', total:2, newCases:1, hospitalized:2, discharged:0, deaths: 0,  states:[{lagos:1},{ogun:1}]},
+
+	{date: '17-03-2020', total:3, newCases:1, hospitalized:3, discharged:0, deaths: 0,  states:[{lagos:2},{ogun:1}]},
+
+	{date: '18-03-2020', total:8, newCases:5, hospitalized:8, discharged:0, deaths: 0,  states:[{lagos:7},{ogun:1}]},
+
+	{date: '19-03-2020', total:12, newCases:4, hospitalized:12, discharged:0, deaths: 0,  states:[{lagos:11},{ogun:1}]},
+
+	{date: '21-03-2020', total:22, newCases:10, hospitalized:22, discharged:0, deaths: 0,  states:[{lagos:18},{ogun:1},{FCT:3}]},
+
+	{date: '22-03-2020', total:25, newCases:3, hospitalized:25, discharged:2, deaths: 0,  states:[{lagos:19},{FCT:3},{ogun:2},{ekiti:1}]},
+
+	{date: '22-03-2020', total:26, newCases:1, hospitalized:26, discharged:2, deaths: 0,  states:[{lagos:19},{FCT:3},{ogun:2},{oyo:1},{ekiti:1}]},
+
+	{date: '22-03-2020', total:27, newCases:1, hospitalized:27, discharged:2, deaths: 0,  states:[{lagos:19},{FCT:4},{ogun:2},{oyo:1},{ekiti:1}]},
+
+	{date: '22-03-2020', total:30, newCases:3, hospitalized:30, discharged:2, deaths: 0,  states:[{lagos:22},{FCT:4},{ogun:2},{oyo:1},{ekiti:1}]},
+
+	{date: '23-03-2020', total:35, newCases:5, hospitalized:35, discharged:2, deaths: 0,  states:[{lagos:24},{FCT:6},{ogun:2},{oyo:1},{ekiti:1},{edo:1}]},
+ 
+ 	{date: '23-03-2020', total:36, newCases:1, hospitalized:36, discharged:2, deaths: 0,  states:[{lagos:25},{FCT:6},{ogun:2},{oyo:1},{ekiti:1},{edo:1}]},
+
+	{date: '23-03-2020', total:40, newCases:4, hospitalized:40, discharged:2, deaths: 1,  states:[{lagos:28},{FCT:7},{ogun:2},{oyo:1},{ekiti:1},{edo:1}]}
+
+	
+]
