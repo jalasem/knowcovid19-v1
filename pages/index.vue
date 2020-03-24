@@ -103,8 +103,14 @@
                   class="h-10 mr-2"
                 />
                 <img
-                  v-if="source.bank"
+                  v-else-if="source.bank"
                   src="/images/bank.png"
+                  alt="bank"
+                  class="h-10 mr-2"
+                />
+                <img
+                  v-else
+                  src="/images/meet.png"
                   alt="bank"
                   class="h-10 mr-2"
                 />
