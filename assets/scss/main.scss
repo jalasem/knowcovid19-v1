@@ -6,14 +6,43 @@ html, body {
   transition: all ease-in .3s;
 }
 
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+::-webkit-scrollbar-track, html::-webkit-scrollbar-track {
+  background: $secondary;
+}
+
+::-webkit-scrollbar, html::-webkit-scrollbar {
+  width: 4px;
+}
+
 .box {
-  @apply border border-indigo-100 border-2 mx-1;
+  @apply border border-indigo-100 border-2 mx-1 bg-white;
+  &:hover {
+    @apply shadow;
+  }
 
   header:first-child {
-    @apply block py-3 px-3 border-indigo-100 border-b-2;
+    @apply font-medium block py-3 px-3 border-indigo-100 border-b-2;
     color: $primary;
   }
   .content {
     @apply p-2;
   }
+}
+
+.primary-text {
+  color: $primary;
 }

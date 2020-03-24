@@ -1,5 +1,5 @@
 <template>
-  <div class="widget risk-checker">
+  <div class="widget risk-checker no-select">
     <div v-if="quizStart" class="questions">
       <p
         v-if="currentQuestion.title"
@@ -18,26 +18,152 @@
       />
     </div>
 
-    <div v-else-if="!quizStart && currentQuestionIndex > 0">
-      <p>
-        result: {{ totalScore }} =>
-        {{
-          totalScore > 4
-            ? 'high risk'
-            : totalScore > 2
-            ? 'Medium Risk'
-            : 'Low risk'
-        }}
-      </p>
-      <button class="btn" @click="start">Start again</button>
+    <div
+      v-else-if="!quizStart && currentQuestionIndex > 0"
+      class="corona-result"
+    >
+      <p class="capitalize">{{ riskLevel }} risk</p>
+      <template v-if="riskLevel === 'high'">
+        <p class="text-2xl font-medium">
+          You are at high risk for COVID-19.
+        </p>
+        <p class="text-xl font-medium">
+          Please do the following:
+        </p>
+
+        <ul>
+          <li>Stay calm</li>
+          <li>Isolate yourself from family and friends</li>
+          <li>
+            Call the following Numbers and you will be told what to do next:
+          </li>
+        </ul>
+        <p class="my-1">
+          For Nigeria: 08000CORONA 08023169485, 08033565529, 08052817243
+        </p>
+        <p class="my-1">
+          For Ghana: +233 55 843 9868 / +233 50 949 7700
+        </p>
+        <p class="my-1">
+          For Kenya: 0729 471414 and 0732 353535
+        </p>
+        <p class="my-1">
+          For Gambia: 1025
+        </p>
+        <p class="my-1">
+          For Cameroon: 1510
+        </p>
+
+        <p class="my-2">
+          Share Knowcovid19 with friend and family to keep them safe
+        </p>
+        <div class="social">
+          <a href="#">
+            <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
+          </a>
+          <a href="#">
+            <img src="/vectors/facebook.svg" alt="fb" class="icon" />
+          </a>
+          <a href="#">
+            <img src="/vectors/linkedin.svg" alt="linkedin" class="icon" />
+          </a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.now.sh"
+          >
+            <img src="/vectors/whatsapp.svg" alt="whatsapp" class="icon" />
+          </a>
+        </div>
+      </template>
+      <template v-if="riskLevel === 'medium'">
+        <p class="text-2xl font-medium">
+          Kindly watch yourself carefully and if you have difficulty in
+          breathing please call the appropriate number.
+        </p>
+
+        <p class="my-1">
+          For Nigeria: 08000CORONA 08023169485, 08033565529, 08052817243
+        </p>
+        <p class="my-1">
+          For Ghana: +233 55 843 9868 / +233 50 949 7700
+        </p>
+        <p class="my-1">
+          For Kenya: 0729 471414 and 0732 353535
+        </p>
+        <p class="my-1">
+          For Gambia: 1025
+        </p>
+        <p class="my-1">
+          For Cameroon: 1510
+        </p>
+
+        <p class="my-2">
+          Share Knowcovid19 with friend and family to keep them safe
+        </p>
+        <div class="social">
+          <a href="#">
+            <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
+          </a>
+          <a href="#">
+            <img src="/vectors/facebook.svg" alt="fb" class="icon" />
+          </a>
+          <a href="#">
+            <img src="/vectors/linkedin.svg" alt="linkedin" class="icon" />
+          </a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.now.sh"
+          >
+            <img src="/vectors/whatsapp.svg" alt="whatsapp" class="icon" />
+          </a>
+        </div>
+      </template>
+      <template v-if="riskLevel === 'low'">
+        <p class="text-2xl font-medium">
+          Stay safe and healthy. Please follow the advice on COVID19 prevention.
+        </p>
+
+        <p class="my-2">
+          Share Knowcovid19 with friend and family to keep them safe
+        </p>
+        <div class="social">
+          <a href="#">
+            <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
+          </a>
+          <a href="#">
+            <img src="/vectors/facebook.svg" alt="fb" class="icon" />
+          </a>
+          <a href="#">
+            <img src="/vectors/linkedin.svg" alt="linkedin" class="icon" />
+          </a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.now.sh"
+          >
+            <img src="/vectors/whatsapp.svg" alt="whatsapp" class="icon" />
+          </a>
+        </div>
+      </template>
     </div>
 
     <div v-else class="text-center">
-      <p class="text-2xl">
-        Answer the following questions to determine your Coronavirus risk factor
-        and determine if you need the Corona helpline or not
+      <p class="text-xl font-medium mb-3">
+        <!-- Answer the following questions to determine your Coronavirus risk factor
+        and determine if you need the Corona helpline or not -->
+        Click this template to know if you are at risk <br />
+        <sub class="font-normal"
+          >Determine if you need the Corona helpline or not</sub
+        >
       </p>
-      <button class="btn start" @click="start">Start</button>
+      <button
+        class="px-10 py-1 rounded-full bg-indigo-800 text-white my-4 font-medium text-xl start"
+        @click="start"
+      >
+        Start
+      </button>
     </div>
   </div>
 </template>
@@ -48,6 +174,7 @@ export default {
     quizStart: false,
     currentQuestionIndex: 0,
     scores: [],
+    riskLevel: null,
     questions: [
       {
         options: [
@@ -119,6 +246,7 @@ export default {
       this.quizStart = true
       this.currentQuestionIndex = 0
       this.scores = []
+      this.riskLevel = null
     },
     fillQuestion(score) {
       this.scores.push(score)
@@ -127,6 +255,9 @@ export default {
         this.currentQuestionIndex += 1
       } else {
         this.quizStart = false
+        // calculate result
+        this.riskLevel =
+          this.totalScore > 4 ? 'high' : this.totalScore > 2 ? 'medium' : 'low'
       }
     }
   }
@@ -138,7 +269,22 @@ export default {
   @apply px-2;
 
   .btn {
-    @apply px-10 py-2 rounded bg-indigo-800 text-white my-4 font-medium text-xl mr-2;
+    @apply px-5 rounded-lg bg-indigo-800 text-white my-4 font-medium text-xl mr-2;
+  }
+
+  .social {
+    @apply flex items-center my-2;
+
+    .icon {
+      @apply w-5 mr-2;
+    }
+  }
+
+  ul {
+    @apply my-3;
+    li {
+      @apply list-disc ml-6;
+    }
   }
 }
 </style>

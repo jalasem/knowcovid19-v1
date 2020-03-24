@@ -1,5 +1,5 @@
 {
-  "name": "KnowCOVID19.ng",
+  "name": "knowcovid19_ng",
   "version": "1.0.0",
   "description": "Corona Virsu (COVID-19) Alert/Support/Enlightenment/Stats and help portal",
   "author": "Abdulsamii Ajala &lt;kgasta@gmail.com&gt;",
@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "now --token W54u5MDkbtHnuGp9aNCPpCTR --prod && now --token W54u5MDkbtHnuGp9aNCPpCTR alias ebidhaang.org && now --token W54u5MDkbtHnuGp9aNCPpCTR alias www.ebidhaang.org",
+    "deploy": "now --token fjwqvTbc31yRSzZzsPAzDqnB --prod",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
