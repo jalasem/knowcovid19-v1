@@ -3,7 +3,7 @@
     class="flex flex-wrap items-center justify-between px-4 bg-indigo-100 border-t-2 fixed bottom-0 left-0 w-full"
   >
     <nuxt-link to="/" class="brand-logo">
-      <img src="/logo.png" alt="Knowcovid19.ng" class="h-10" />
+      <img src="/images/logo.png" alt="Knowcovid19.ng" class="h-10" />
     </nuxt-link>
     <div class="social">
       <a href="#">

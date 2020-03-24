@@ -11,7 +11,7 @@
       </div>
       <nuxt-link to="/" class="brand-logo">
         <!-- KnowCOVID19<span class="md:inline-flex hidden">.<sub>ng</sub></span> -->
-        <img src="/logo.png" alt="Knowcovid19.ng" class="h-12" />
+        <img src="/images/logo.png" alt="Knowcovid19.ng" class="h-12" />
       </nuxt-link>
     </div>
     <div class="nav-group md:flex hidden">
