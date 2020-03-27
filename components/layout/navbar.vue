@@ -15,7 +15,7 @@
       </nuxt-link>
     </div>
     <div class="nav-group md:flex hidden">
-      <nuxt-link to="/">Dashbooard</nuxt-link>
+      <nuxt-link to="/">Dashboard</nuxt-link>
       <nuxt-link to="/risk-checker">Risk Checker</nuxt-link>
       <!-- <a href="#">Facts</a> -->
       <a href="#">Case Tracking</a>
@@ -27,7 +27,7 @@
     </div>
     <div class="nav-group flex social">
       <button
-        class="py-1 md:px-3 px-5 bg-indigo-800 hover:bg-yellow-700 focus:outline-none text-white rounded"
+        class="py-1 md:px-3 px-5 bg-indigo-800 hover:bg-yellow-700 focus:outline-none text-white rounded-full"
       >
         Report a case
       </button>

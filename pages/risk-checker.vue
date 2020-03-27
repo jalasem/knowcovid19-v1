@@ -12,7 +12,7 @@
           <template v-if="!start">
             <p class="question">
               Hello! This risk check self assesment was developed based on the
-              guidelines from the WHO. This assesment should not be taken a s a
+              guidelines from the WHO. This assesment should not be taken as a
               medical advice. Any information you share with us will be kept
               strictly confidential.
             </p>

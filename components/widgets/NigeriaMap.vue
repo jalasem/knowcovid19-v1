@@ -49,13 +49,15 @@ export default {
     tooltipX: 0,
     tooltipY: 0,
     coronaStats: [
-      { state: 'Lagos', total: 29 },
-      { state: 'FCT', total: 8 },
+      { state: 'Lagos', total: 32 },
+      { state: 'FCT', total: 10 },
       { state: 'Ogun', total: 3 },
       { state: 'Ekiti', total: 1 },
       { state: 'Oyo', total: 1 },
       { state: 'Edo', total: 1 },
-      { state: 'Bauchi', total: 1 }
+      { state: 'Bauchi', total: 1 },
+      { state: 'Osun', total: 1 },
+      { state: 'Rivers', total: 1 }
     ],
     states: [
       {

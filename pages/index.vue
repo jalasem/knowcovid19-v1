@@ -71,12 +71,12 @@
           </div>
           <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2">
             <header>Cases per state</header>
-            <div class="content flex justify-center">
-              <apexchart
-                type="donut"
-                width="380"
+            <div class="content">
+              <GChart
+                class="h-64"
+                type="PieChart"
+                :data="chartData"
                 :options="chartOptions"
-                :series="series"
               />
             </div>
           </div>
@@ -89,7 +89,14 @@
           <div
             class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 flex flex-col items-stretch"
           >
-            <header>Infection Sources</header>
+            <div class="flex justify-between items-center">
+              <header>Infection Sources</header>
+              <button
+                class="rounded-full mr-2 py-1 px-6 bg-orange-600 text-white"
+              >
+                Report now
+              </button>
+            </div>
             <div class="content overflow-y-auto case-source-wrapper">
               <div
                 v-for="(source, sourceIndex) in infectionSources"
@@ -125,19 +132,21 @@
                       <span v-text="source.info" />
                     </p>
                   </div>
-                  <div class="action flex items-center">
+                  <!-- <div class="action flex items-center">
                     <button
                       v-if="source.actionText"
                       v-ripple
                       class="bg-indigo-800 text-white hover:bg-orange-600 focus:outline-none py-1 px-2 rounded"
                       v-text="source.actionText"
                     />
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
           </div>
-          <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-3">
+          <div
+            class="case-tracking box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-3"
+          >
             <header>Cases Tracking</header>
             <div class="content h-64">
               <p>
@@ -149,7 +158,9 @@
               </p>
             </div>
           </div>
-          <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1">
+          <div
+            class="box case-clusters col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1"
+          >
             <header>Cases Clusters</header>
             <div class="content h-64">
               <p>
@@ -158,7 +169,7 @@
             </div>
           </div>
           <div
-            class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-3 relative"
+            class="box covid-updates col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-3 relative"
           >
             <div
               class="h-12 px-3 flex items-center justify-between border-b border-indigo-100"
@@ -179,7 +190,9 @@
               </button>
             </div>
           </div>
-          <div class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-1">
+          <div
+            class="box action-box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-1"
+          >
             <header class="text-center">Call to action</header>
             <div class="content text-center">
               <p class="text-3xl mt-10 mb-3 font-medium">Stop the spread!</p>
@@ -266,6 +279,8 @@
 </template>
 
 <script>
+// import { Line } from 'vue-chartjs'
+import { GChart } from 'vue-google-charts'
 import NavBar from '~/components/layout/navbar.vue'
 import Knowvid19Footer from '~/components/layout/footer.vue'
 import CoronaChecker from '~/components/widgets/CoronaChecker.vue'
@@ -275,6 +290,7 @@ export default {
   components: {
     NavBar,
     Knowvid19Footer,
+    GChart,
     NigeriaMap,
     CoronaChecker
   },
@@ -285,12 +301,12 @@ export default {
     majorStats: {
       total: {
         heading: 'Total Cases',
-        quantity: 44,
+        quantity: 51,
         info: '1st case: 27/02/2020'
       },
       hospitalized: {
         heading: 'Currently Hospitalized',
-        quantity: 41
+        quantity: 48
       },
       deaths: {
         heading: 'Deaths',
@@ -471,35 +487,6 @@ export default {
         ]
       }
     ],
-    series: [29, 8, 3, 1, 1, 1, 1],
-    chartOptions: {
-      chart: {
-        width: 380,
-        type: 'donut'
-      },
-      dataLabels: {
-        enabled: false
-      },
-      labels: ['Lagos', 'FCT', 'Ogun', 'Ekiti', 'Oyo', 'Edo', 'Bauchi'],
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              show: false
-            }
-          }
-        }
-      ],
-      legend: {
-        position: 'right',
-        offsetY: 0,
-        height: 230
-      }
-    },
     infectionSources: [
       {
         main: "Residents of Atiku Abubakar's Estate",
@@ -579,7 +566,24 @@ export default {
         main: 'Had a contact with Alh. Aliko Dangote and Alhaji Ladan Salihu',
         info: 'Anytime from 18th March'
       }
-    ]
+    ],
+    chartData: [
+      ['State', 'cases'],
+      ['Lagos', 32],
+      ['FCT', 10],
+      ['Ogun', 3],
+      ['Ekiti', 1],
+      ['Oyo', 1],
+      ['Edo', 1],
+      ['Bauchi', 1],
+      ['Osun', 1],
+      ['Rivers', 1]
+    ],
+    chartOptions: {
+      pieHole: 0.4,
+      title: 'Case per state',
+      subtitle: 'Sales, Expenses, and Profit: 2014-2017'
+    }
   }),
   computed: {
     computedMajorStats() {
@@ -692,6 +696,13 @@ export default {
         margin-left: -1.3rem;
       }
     }
+  }
+
+  .case-tracking,
+  .covid-updates,
+  .action-box,
+  .case-clusters {
+    display: none;
   }
 
   .cases-summary {
