@@ -5,7 +5,7 @@
   "author": "Abdulsamii Ajala &lt;kgasta@gmail.com&gt;",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --port 5050",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",

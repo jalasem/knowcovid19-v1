@@ -28,6 +28,7 @@
     <div class="nav-group flex social">
       <button
         class="py-1 md:px-3 px-5 bg-indigo-800 hover:bg-yellow-700 focus:outline-none text-white rounded-full"
+        @click="$eventBus.$emit('report-case')"
       >
         Report a case
       </button>

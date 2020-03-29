@@ -93,6 +93,7 @@
               <header>Infection Sources</header>
               <button
                 class="rounded-full mr-2 py-1 px-6 bg-orange-600 text-white"
+                @click="$eventBus.$emit('report-case')"
               >
                 Report now
               </button>
@@ -301,12 +302,11 @@ export default {
     majorStats: {
       total: {
         heading: 'Total Cases',
-        quantity: 51,
+        quantity: 89,
         info: '1st case: 27/02/2020'
       },
       hospitalized: {
-        heading: 'Currently Hospitalized',
-        quantity: 48
+        heading: 'Currently Hospitalized'
       },
       deaths: {
         heading: 'Deaths',
@@ -314,7 +314,7 @@ export default {
       },
       discharged: {
         heading: 'Discharged',
-        quantity: 2
+        quantity: 3
       }
     },
     caseHistory: [
@@ -569,14 +569,16 @@ export default {
     ],
     chartData: [
       ['State', 'cases'],
-      ['Lagos', 32],
-      ['FCT', 10],
+      ['Lagos', 59],
+      ['FCT', 14],
       ['Ogun', 3],
+      ['Enugu', 2],
       ['Ekiti', 1],
-      ['Oyo', 1],
-      ['Edo', 1],
-      ['Bauchi', 1],
+      ['Oyo', 3],
+      ['Edo', 2],
+      ['Bauchi', 2],
       ['Osun', 1],
+      ['Rivers', 1],
       ['Rivers', 1]
     ],
     chartOptions: {
@@ -588,6 +590,10 @@ export default {
   computed: {
     computedMajorStats() {
       const statObj = this.majorStats
+
+      statObj.hospitalized.quantity =
+        statObj.total.quantity -
+        (statObj.deaths.quantity + statObj.discharged.quantity)
 
       statObj.hospitalized.info = `${(
         (statObj.hospitalized.quantity / statObj.total.quantity) *

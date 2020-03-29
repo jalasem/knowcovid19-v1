@@ -1,8 +1,30 @@
 <template>
   <div>
     <nuxt />
+    <case-reporter v-if="caseReport" />
   </div>
 </template>
+
+<script>
+import CaseReporter from '~/components/widgets/caseReporter.vue'
+
+export default {
+  components: {
+    CaseReporter
+  },
+  data: () => ({
+    caseReport: false
+  }),
+  mounted() {
+    this.$eventBus.$on('report-case', () => {
+      this.caseReport = true
+    })
+    this.$eventBus.$on('close-case-report', () => {
+      this.caseReport = false
+    })
+  }
+}
+</script>
 
 <style>
 html {

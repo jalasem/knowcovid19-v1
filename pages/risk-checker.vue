@@ -286,12 +286,13 @@ export default {
     form: {
       age: null,
       gender: '',
-      temp: '',
+      temp: null,
       symptoms: {
         cough: false,
         sneezing: false,
         soreThroat: false,
-        weakness: false
+        weakness: false,
+        breathingIssues: false
       },
       travelHistory: false,
       travelContact: false,
@@ -304,7 +305,8 @@ export default {
       stroke: false,
       lungDisease: false,
       symptomStatus: null
-    }
+    },
+    existingAilment: false
   }),
   computed: {
     noSymptoms() {
@@ -316,8 +318,8 @@ export default {
     setAnswer(field, answer, step) {
       this.form[field] = answer
 
-      if (step === 7) this.reviewEntries()
       if (this.step < step) this.proceed(step)
+      if (this.step === 7) this.reviewEntries()
     },
     setSymptoms(field, answer, step) {
       this.form.symptoms[field] = answer
@@ -335,7 +337,61 @@ export default {
     proceed(step) {
       this.step += 1
     },
-    reviewEntries() {}
+    reviewEntries() {
+      const {
+        // age,
+        // gender,
+        temp,
+        symptoms,
+        travelHistory,
+        travelContact,
+        covidContact,
+        weakImmunity,
+        diabetes,
+        bloodPressure,
+        heartDisease,
+        stroke,
+        lungDisease
+        // symptomStatus
+      } = this.form
+
+      const {
+        cough,
+        sneezing,
+        soreThroat,
+        weakness,
+        breathingIssues
+      } = symptoms
+
+      let totalScore = 0
+
+      // temperature chechk
+      if (temp) totalScore += 1
+
+      // symptoms check
+      if (cough) totalScore += 1
+      if (sneezing) totalScore += 1
+      if (soreThroat) totalScore += 1
+      if (weakness) totalScore += 1
+      if (breathingIssues) totalScore += 3
+
+      // others
+      if (travelHistory) totalScore += 5
+      if (travelContact) totalScore += 5
+      if (covidContact) totalScore += 5
+
+      if (
+        weakImmunity ||
+        diabetes ||
+        bloodPressure ||
+        heartDisease ||
+        stroke ||
+        lungDisease
+      )
+        this.existingAilment = true
+
+      console.log({ totalScore })
+    }
   }
 }
 </script>
