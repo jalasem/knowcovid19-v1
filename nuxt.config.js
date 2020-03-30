@@ -52,6 +52,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    // '@nuxtjs/proxy',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/style-resources'
@@ -68,22 +69,22 @@ export default {
    */
   axios: {
     // retry: { retries: 2 },
-    proxy: true,
+    // proxy: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
       'Access-Control-Allow-Credentials': 'true'
-    }
-    // baseUrl: process.env.BASE_URL
+    },
+    baseURL: process.env.BASE_URL || 'https://knowcovid19-backend.now.sh/v1'
   },
-  proxy: {
-    '/api/': {
-      target: `${process.env.BASE_URL}/`,
-      pathRewrite: { '^/api/': '' },
-      changeOrigin: true
-    }
-  },
+  // proxy: {
+  //   '/api/': {
+  //     target: `${process.env.BASE_URL}/`,
+  //     pathRewrite: { '^/api/': '' }
+  //     changeOrigin: true
+  //   }
+  // },
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },

@@ -39,6 +39,6 @@
     { "src": "/(.*)", "dest": "/" }
   ],
   "env": {
-    "BASE_URL": "@knowcovid_backend_url"
+    "BASE_URL": "@knowcovid19_backend_url"
   }
 }

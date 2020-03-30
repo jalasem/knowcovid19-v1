@@ -309,28 +309,20 @@
               </p>
               <div class="social-share">
                 <a href="#">
-                  <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
+                  <img src="/images/twitter.svg" alt="twitter" class="icon" />
                 </a>
                 <a href="#">
-                  <img src="/vectors/facebook.svg" alt="fb" class="icon" />
+                  <img src="/images/facebook.svg" alt="fb" class="icon" />
                 </a>
                 <a href="#">
-                  <img
-                    src="/vectors/linkedin.svg"
-                    alt="linkedin"
-                    class="icon"
-                  />
+                  <img src="/images/linkedin.svg" alt="linkedin" class="icon" />
                 </a>
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
                   href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.now.sh"
                 >
-                  <img
-                    src="/vectors/whatsapp.svg"
-                    alt="whatsapp"
-                    class="icon"
-                  />
+                  <img src="/images/whatsapp.svg" alt="whatsapp" class="icon" />
                 </a>
               </div>
             </div>
@@ -364,28 +356,20 @@
               </p>
               <div class="social-share">
                 <a href="#">
-                  <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
+                  <img src="/images/twitter.svg" alt="twitter" class="icon" />
                 </a>
                 <a href="#">
-                  <img src="/vectors/facebook.svg" alt="fb" class="icon" />
+                  <img src="/images/facebook.svg" alt="fb" class="icon" />
                 </a>
                 <a href="#">
-                  <img
-                    src="/vectors/linkedin.svg"
-                    alt="linkedin"
-                    class="icon"
-                  />
+                  <img src="/images/linkedin.svg" alt="linkedin" class="icon" />
                 </a>
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
                   href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.now.sh"
                 >
-                  <img
-                    src="/vectors/whatsapp.svg"
-                    alt="whatsapp"
-                    class="icon"
-                  />
+                  <img src="/images/whatsapp.svg" alt="whatsapp" class="icon" />
                 </a>
               </div>
             </div>
@@ -403,28 +387,20 @@
               </p>
               <div class="social-share">
                 <a href="#">
-                  <img src="/vectors/twitter.svg" alt="twitter" class="icon" />
+                  <img src="/images/twitter.svg" alt="twitter" class="icon" />
                 </a>
                 <a href="#">
-                  <img src="/vectors/facebook.svg" alt="fb" class="icon" />
+                  <img src="/images/facebook.svg" alt="fb" class="icon" />
                 </a>
                 <a href="#">
-                  <img
-                    src="/vectors/linkedin.svg"
-                    alt="linkedin"
-                    class="icon"
-                  />
+                  <img src="/images/linkedin.svg" alt="linkedin" class="icon" />
                 </a>
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
                   href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.now.sh"
                 >
-                  <img
-                    src="/vectors/whatsapp.svg"
-                    alt="whatsapp"
-                    class="icon"
-                  />
+                  <img src="/images/whatsapp.svg" alt="whatsapp" class="icon" />
                 </a>
               </div>
             </div>
@@ -596,10 +572,7 @@ export default {
 
       try {
         this.evaluating = true
-        const { data } = await this.$axios.post(
-          '/api/central/assesment',
-          payload
-        )
+        const { data } = await this.$axios.post('/central/assesment', payload)
         console.log({ data })
       } catch (err) {
         console.log({ err })

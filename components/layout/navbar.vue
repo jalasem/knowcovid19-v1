@@ -21,7 +21,7 @@
       <a href="#">Case Tracking</a>
       <!-- <a href="#">Africa</a>
         <a href="#">Worldwide</a> -->
-      <a href="#">Funding</a>
+      <nuxt-link target="_blank" to="/funding">Funding</nuxt-link>
       <!-- <a href="#">Supplies/Tracking</a> -->
       <nuxt-link to="/about">About</nuxt-link>
     </div>
@@ -32,15 +32,6 @@
       >
         Report a case
       </button>
-      <!-- <a href="#">
-          <img src="/images/twitter.png" alt="twitter" class="icon" />
-        </a>
-        <a href="#">
-          <img src="/images/facebook.png" alt="twitter" class="icon" />
-        </a>
-        <a href="#">
-          <img src="/images/linkedin.png" alt="twitter" class="icon" />
-        </a> -->
     </div>
     <aside :class="{ open: menuOpen }">
       <div class="flex items-center h-16 mb-6 mr-3">
@@ -61,7 +52,13 @@
       <a href="#">Case Tracking</a>
       <!-- <a href="#">Africa</a>
         <a href="#">Worldwide</a> -->
-      <a href="#">Funding</a>
+      <nuxt-link target="_blank" to="/funding">Funding</nuxt-link>
+      <!-- <a
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        href=""
+        >Funding</a
+      > -->
       <!-- <a href="#">Supplies/Tracking</a> -->
       <nuxt-link to="/about">About</nuxt-link>
     </aside>

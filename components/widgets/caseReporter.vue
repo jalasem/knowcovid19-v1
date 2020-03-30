@@ -2,7 +2,9 @@
   <div class="widget case-reporter" @click.self="closeWidget">
     <div class="modal">
       <header>
-        <span class="text-2xl font-semibold">Report a case</span>
+        <span class="text-2xl font-semibold">{{
+          feedback ? 'Feedback' : 'Report a case'
+        }}</span>
         <img
           src="/vectors/close.svg"
           alt="vectors"
@@ -10,12 +12,12 @@
           @click="closeWidget"
         />
       </header>
-      <div class="content">
+      <div v-if="!feedback" class="content">
         <select class="mb-4 pr-5 focus:outline-none bg-transparent">
           <option value="self">I'm filling for myself</option>
           <option value="thirdParty">I'm filling for somebody else</option>
         </select>
-        <form class="grid grid-cols-1 row-gap-3 px-2" @submit.prevent>
+        <form class="grid grid-cols-1 row-gap-3 px-2" @submit.prevent="submit">
           <div class="form-field">
             <label>Title</label>
             <div class="options">
@@ -120,8 +122,12 @@
               </div>
               <div class="flex-grow flex flex-col ml-4 pb-2">
                 <label class="mb-3">State</label>
-                <select v-model="form.state" required>
-                  <option :value="null">Choose state</option>
+                <select
+                  v-model="form.state"
+                  class="focus:outline-none"
+                  required
+                >
+                  <option :value="null" disabled>Choose state</option>
                   <option
                     v-for="state in nigerianStates"
                     :key="state.alias"
@@ -147,6 +153,22 @@
           </div>
         </form>
       </div>
+      <div v-else class="content">
+        <!-- <p class="text-3xl font-semibold">Thank you</p> -->
+        <p class="text-2xl font-semibold text-indigo-700 mb-2">
+          While we try our best to link you up with the best help you can get,
+          do the following;
+        </p>
+        <ul class="text-xl mb-3">
+          <li class="ml-5 list-disc">Stay calm</li>
+          <li class="ml-5 list-disc">
+            Isolate yourself from family and friends
+          </li>
+          <li class="ml-5 list-disc">
+            Call NCDC on: 08000CORONA 08023169485, 08033565529, 08052817243
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -155,8 +177,9 @@
 import nigerianStates from '~/assets/data/nigerianStates'
 export default {
   data: () => ({
+    feedback: false,
     form: {
-      title: '',
+      title: 'mr',
       fullname: '',
       phone: '',
       email: '',
@@ -173,15 +196,12 @@ export default {
       { name: 'Dry cough', alias: 'dryCough' },
       { name: 'fever', alias: 'fever' },
       { name: 'Sore throat', alias: 'soreThroat' },
-      { name: 'Running nose', alias: 'runningNose' },
+      { name: 'Runny nose', alias: 'runnyNose' },
       { name: 'Diarrhea', alias: 'diarrhea' },
       { name: 'Abdominal pain', alias: 'abdominalPain' }
     ],
     nigerianStates
   }),
-  mounted() {
-    this.$loading.show()
-  },
   methods: {
     closeWidget() {
       this.$eventBus.$emit('close-case-report')
@@ -204,7 +224,26 @@ export default {
       }
     },
     hasSymptom(symptom) {
-      return this.form.symptoms.includes(symptom)
+      return symptom === 'noSymptoms'
+        ? !this.form.symptoms.length
+        : this.form.symptoms.includes(symptom)
+    },
+    async submit() {
+      const loader = this.$loading.show()
+      try {
+        const { data } = await this.$axios.post('/central/report', {
+          ...this.form,
+          symptoms: this.form.symptoms.join(', ')
+        })
+
+        const { status } = data
+
+        if (status === 'success') this.feedback = true
+      } catch (err) {
+        console.log({ err })
+      } finally {
+        loader.hide()
+      }
     }
   }
 }
