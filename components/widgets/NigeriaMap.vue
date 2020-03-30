@@ -49,16 +49,18 @@ export default {
     tooltipX: 0,
     tooltipY: 0,
     coronaStats: [
-      { state: 'Lagos', total: 52 },
-      { state: 'FCT', total: 14 },
+      { state: 'Lagos', total: 68 },
+      { state: 'FCT', total: 21 },
       { state: 'Ogun', total: 3 },
+      { state: 'Enugu', total: 2 },
       { state: 'Ekiti', total: 1 },
-      { state: 'Oyo', total: 3 },
+      { state: 'Oyo', total: 7 },
       { state: 'Edo', total: 2 },
       { state: 'Bauchi', total: 2 },
-      { state: 'Osun', total: 1 },
+      { state: 'Osun', total: 2 },
       { state: 'Rivers', total: 1 },
-      { state: 'Enugu', total: 2 }
+      { state: 'Benue', total: 1 },
+      { state: 'Kaduna', total: 1 }
     ],
     states: [
       {

@@ -1,3 +1,9 @@
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+console.log({ APIURL: process.env.BASE_URL })
+
 export default {
   mode: 'universal',
   /*
@@ -60,7 +66,27 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    // retry: { retries: 2 },
+    proxy: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
+      'Access-Control-Allow-Credentials': 'true'
+    }
+    // baseUrl: process.env.BASE_URL
+  },
+  proxy: {
+    '/api/': {
+      target: `${process.env.BASE_URL}/`,
+      pathRewrite: { '^/api/': '' },
+      changeOrigin: true
+    }
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
   /*
    ** Build configuration
    */

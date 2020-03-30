@@ -302,7 +302,7 @@ export default {
     majorStats: {
       total: {
         heading: 'Total Cases',
-        quantity: 89,
+        quantity: 111,
         info: '1st case: 27/02/2020'
       },
       hospitalized: {
@@ -569,17 +569,18 @@ export default {
     ],
     chartData: [
       ['State', 'cases'],
-      ['Lagos', 59],
-      ['FCT', 14],
+      ['Lagos', 68],
+      ['FCT', 21],
       ['Ogun', 3],
       ['Enugu', 2],
       ['Ekiti', 1],
-      ['Oyo', 3],
+      ['Oyo', 7],
       ['Edo', 2],
       ['Bauchi', 2],
-      ['Osun', 1],
+      ['Osun', 2],
       ['Rivers', 1],
-      ['Rivers', 1]
+      ['Benue', 1],
+      ['Kaduna', 1]
     ],
     chartOptions: {
       pieHole: 0.4,

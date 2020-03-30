@@ -45,14 +45,13 @@
             your couch through your devices.
           </p>
 
-          <p>Connect with us:</p>
+          <!-- <p>Connect with us:</p>
           <ul>
-            <li>Website:</li>
             <li>Twitter:</li>
             <li>Facebook:</li>
             <li>Twitter:</li>
             <li>Phone number:</li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </main>

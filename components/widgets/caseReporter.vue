@@ -47,22 +47,32 @@
           </div>
           <div class="form-field">
             <label>Fullname</label>
-            <input type="text" />
+            <input v-model="form.fullname" type="text" required />
           </div>
           <div class="form-field">
             <label>Phone number</label>
-            <input type="text" />
+            <input v-model="form.phone" type="text" required />
           </div>
           <div class="form-field">
             <label>Email address</label>
-            <input type="email" />
+            <input v-model="form.email" type="email" required />
           </div>
           <div class="form-field pb-1">
             <label>Gender</label>
-            <select class="mt-2 mb-1 focus:outline-none bg-transparent">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
+            <div class="options pt-1">
+              <span
+                class="option"
+                :class="{ selected: form.gender === 'male' }"
+                @click="setAnswer('gender', 'male')"
+                >Male</span
+              >
+              <span
+                class="option"
+                :class="{ selected: form.gender === 'female' }"
+                @click="setAnswer('gender', 'female')"
+                >Female</span
+              >
+            </div>
           </div>
           <div class="form-field">
             <label
@@ -70,15 +80,14 @@
               weeks?</label
             >
             <div class="options justify-center pt-2">
-              <span class="option">No symptoms</span>
-              <span class="option">Shortness of breath</span>
-              <span class="option">Nasal congestion</span>
-              <span class="option">Dry cough</span>
-              <span class="option">Fever</span>
-              <span class="option">Sore throat</span>
-              <span class="option">Running nose</span>
-              <span class="option">Diarrhea</span>
-              <span class="option">Abdominal pain</span>
+              <span
+                v-for="symptom in symptoms"
+                :key="symptom.alias"
+                class="option"
+                :class="{ selected: hasSymptom(symptom.alias) }"
+                @click="setSymptom(symptom.alias)"
+                v-text="symptom.name"
+              />
             </div>
           </div>
           <div class="form-field">
@@ -87,8 +96,18 @@
               residence in the past month?</label
             >
             <div class="options pt-2">
-              <span class="option">Yes</span>
-              <span class="option">No</span>
+              <span
+                class="option"
+                :class="{ selected: form.travelHistory }"
+                @click="setAnswer('travelHistory', true)"
+                >Yes</span
+              >
+              <span
+                :class="{ selected: !form.travelHistory }"
+                class="option"
+                @click="setAnswer('travelHistory', false)"
+                >No</span
+              >
             </div>
           </div>
           <div class="form-field">
@@ -101,7 +120,7 @@
               </div>
               <div class="flex-grow flex flex-col ml-4 pb-2">
                 <label class="mb-3">State</label>
-                <select>
+                <select v-model="form.state" required>
                   <option :value="null">Choose state</option>
                   <option
                     v-for="state in nigerianStates"
@@ -115,7 +134,7 @@
           </div>
           <div class="form-field">
             <label>Address</label>
-            <textarea></textarea>
+            <textarea v-model="form.address" required></textarea>
           </div>
           <div class="form-field justify-end">
             <button
@@ -137,16 +156,55 @@ import nigerianStates from '~/assets/data/nigerianStates'
 export default {
   data: () => ({
     form: {
-      title: ''
+      title: '',
+      fullname: '',
+      phone: '',
+      email: '',
+      gender: 'male',
+      symptoms: [],
+      travelHistory: false,
+      state: '',
+      address: ''
     },
+    symptoms: [
+      { name: 'No symptoms', alias: 'noSymptoms' },
+      { name: 'Shortness of breath', alias: 'difficultyBreathing' },
+      { name: 'Nasal congestion', alias: 'nasalCongestion' },
+      { name: 'Dry cough', alias: 'dryCough' },
+      { name: 'fever', alias: 'fever' },
+      { name: 'Sore throat', alias: 'soreThroat' },
+      { name: 'Running nose', alias: 'runningNose' },
+      { name: 'Diarrhea', alias: 'diarrhea' },
+      { name: 'Abdominal pain', alias: 'abdominalPain' }
+    ],
     nigerianStates
   }),
+  mounted() {
+    this.$loading.show()
+  },
   methods: {
     closeWidget() {
       this.$eventBus.$emit('close-case-report')
     },
     setAnswer(field, value) {
       this.form[field] = value
+    },
+    setSymptom(symptom) {
+      if (symptom === 'noSymptoms') {
+        this.form.symptoms = []
+        return
+      }
+
+      if (this.form.symptoms.includes(symptom)) {
+        this.form.symptoms = this.form.symptoms.filter(
+          (aSymptom) => aSymptom !== symptom
+        )
+      } else {
+        this.form.symptoms.push(symptom)
+      }
+    },
+    hasSymptom(symptom) {
+      return this.form.symptoms.includes(symptom)
     }
   }
 }

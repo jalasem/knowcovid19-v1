@@ -37,5 +37,8 @@
       "dest": "/service-worker.js"
     },
     { "src": "/(.*)", "dest": "/" }
-  ]
+  ],
+  "env": {
+    "BASE_URL": "@knowcovid_backend_url"
+  }
 }
