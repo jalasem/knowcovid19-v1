@@ -287,6 +287,8 @@ import Knowvid19Footer from '~/components/layout/footer.vue'
 import CoronaChecker from '~/components/widgets/CoronaChecker.vue'
 import NigeriaMap from '~/components/widgets/NigeriaMap.vue'
 
+import coronaStats from '~/assets/data/coronaStats'
+
 export default {
   components: {
     NavBar,
@@ -296,27 +298,11 @@ export default {
     CoronaChecker
   },
   data: () => ({
+    coronaStats,
     showChecker: false,
     currentSegment: 'Nigeria',
-    dataSegments: ['Nigeria', 'Africa', 'Worldwide'],
-    majorStats: {
-      total: {
-        heading: 'Total Cases',
-        quantity: 131,
-        info: '1st case: 27/02/2020'
-      },
-      hospitalized: {
-        heading: 'Currently Hospitalized'
-      },
-      deaths: {
-        heading: 'Deaths',
-        quantity: 2
-      },
-      discharged: {
-        heading: 'Discharged',
-        quantity: 3
-      }
-    },
+    // dataSegments: ['Nigeria', 'Africa', 'Worldwide'],
+    dataSegments: ['Nigeria'],
     caseHistory: [
       {
         date: '27-02-2020',
@@ -567,21 +553,6 @@ export default {
         info: 'Anytime from 18th March'
       }
     ],
-    chartData: [
-      ['State', 'cases'],
-      ['Lagos', 81],
-      ['FCT', 25],
-      ['Ogun', 3],
-      ['Enugu', 2],
-      ['Ekiti', 1],
-      ['Oyo', 8],
-      ['Edo', 2],
-      ['Bauchi', 2],
-      ['Osun', 2],
-      ['Rivers', 1],
-      ['Benue', 1],
-      ['Kaduna', 3]
-    ],
     chartOptions: {
       pieHole: 0.4,
       title: 'Case per state',
@@ -589,6 +560,18 @@ export default {
     }
   }),
   computed: {
+    chartData() {
+      const data = [['State', 'cases']]
+
+      this.coronaStats.statesData.forEach(({ state, total }) => {
+        data.push([state, total])
+      })
+
+      return data
+    },
+    majorStats() {
+      return this.coronaStats.majorStats
+    },
     computedMajorStats() {
       const statObj = this.majorStats
 
