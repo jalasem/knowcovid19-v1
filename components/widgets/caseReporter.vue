@@ -113,6 +113,43 @@
             </div>
           </div>
           <div class="form-field">
+            <label
+              >Have you been in contact with any confirmed (COVID-19)
+              case?</label
+            >
+            <div class="options pt-2">
+              <span
+                class="option"
+                :class="{ selected: form.covidContact }"
+                @click="setAnswer('covidContact', true)"
+                >Yes</span
+              >
+              <span
+                :class="{ selected: !form.covidContact }"
+                class="option"
+                @click="setAnswer('covidContact', false)"
+                >No</span
+              >
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Are you under treatment for any other ailment?</label>
+            <div class="options pt-2">
+              <span
+                class="option"
+                :class="{ selected: form.existingAilment }"
+                @click="setAnswer('existingAilment', true)"
+                >Yes</span
+              >
+              <span
+                :class="{ selected: !form.existingAilment }"
+                class="option"
+                @click="setAnswer('existingAilment', false)"
+                >No</span
+              >
+            </div>
+          </div>
+          <div class="form-field">
             <div class="flex">
               <div class="flex-grow flex flex-col mr-4 pb-2">
                 <label class="mb-3">Country</label>
@@ -127,7 +164,7 @@
                   class="focus:outline-none"
                   required
                 >
-                  <option :value="null" disabled>Choose state</option>
+                  <option selected disabled>Choose state</option>
                   <option
                     v-for="state in nigerianStates"
                     :key="state.alias"
@@ -185,6 +222,8 @@ export default {
       email: '',
       gender: 'male',
       symptoms: [],
+      covidContact: false,
+      existingAilment: false,
       travelHistory: false,
       state: '',
       address: ''
@@ -198,7 +237,10 @@ export default {
       { name: 'Sore throat', alias: 'soreThroat' },
       { name: 'Runny nose', alias: 'runnyNose' },
       { name: 'Diarrhea', alias: 'diarrhea' },
-      { name: 'Abdominal pain', alias: 'abdominalPain' }
+      { name: 'Abdominal pain', alias: 'abdominalPain' },
+      { name: 'Aches and pains', alias: 'achesAndPains' },
+      { name: 'Fatigue', alias: 'fatigue' },
+      { name: 'Pressure in the chest', alias: 'chestPressure' }
     ],
     nigerianStates
   }),

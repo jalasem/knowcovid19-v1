@@ -60,7 +60,7 @@
               >
 
               <nuxt-link
-                to="/risk-checker"
+                to="/risk-check"
                 tag="button"
                 class="block focus:outline-none mx-auto px-10 rounded-full text-xl font-medium py-2 mt-4 bg-indigo-700 text-white"
               >
@@ -302,7 +302,7 @@ export default {
     majorStats: {
       total: {
         heading: 'Total Cases',
-        quantity: 111,
+        quantity: 131,
         info: '1st case: 27/02/2020'
       },
       hospitalized: {
@@ -310,7 +310,7 @@ export default {
       },
       deaths: {
         heading: 'Deaths',
-        quantity: 1
+        quantity: 2
       },
       discharged: {
         heading: 'Discharged',
@@ -569,18 +569,18 @@ export default {
     ],
     chartData: [
       ['State', 'cases'],
-      ['Lagos', 68],
-      ['FCT', 21],
+      ['Lagos', 81],
+      ['FCT', 25],
       ['Ogun', 3],
       ['Enugu', 2],
       ['Ekiti', 1],
-      ['Oyo', 7],
+      ['Oyo', 8],
       ['Edo', 2],
       ['Bauchi', 2],
       ['Osun', 2],
       ['Rivers', 1],
       ['Benue', 1],
-      ['Kaduna', 1]
+      ['Kaduna', 3]
     ],
     chartOptions: {
       pieHole: 0.4,

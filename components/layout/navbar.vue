@@ -16,7 +16,7 @@
     </div>
     <div class="nav-group md:flex hidden">
       <nuxt-link to="/">Dashboard</nuxt-link>
-      <nuxt-link to="/risk-checker">Risk Checker</nuxt-link>
+      <nuxt-link to="/risk-check">Risk Checker</nuxt-link>
       <!-- <a href="#">Facts</a> -->
       <a href="#">Case Tracking</a>
       <!-- <a href="#">Africa</a>
