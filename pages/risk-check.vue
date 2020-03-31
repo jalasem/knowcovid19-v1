@@ -546,10 +546,9 @@ export default {
       // submit
       const loader = this.$loading.show()
       try {
-        const { data } = await this.$axios.post('/central/assesment', payload)
-
-        console.log({ data })
+        await this.$axios.post('/central/assesment', payload)
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.log({ err })
       } finally {
         loader.hide()

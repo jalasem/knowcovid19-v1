@@ -282,6 +282,7 @@ export default {
 
         if (status === 'success') this.feedback = true
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.log({ err })
       } finally {
         loader.hide()

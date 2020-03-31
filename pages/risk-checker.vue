@@ -572,9 +572,9 @@ export default {
 
       try {
         this.evaluating = true
-        const { data } = await this.$axios.post('/central/assesment', payload)
-        console.log({ data })
+        await this.$axios.post('/central/assesment', payload)
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.log({ err })
       } finally {
         this.evaluating = false
