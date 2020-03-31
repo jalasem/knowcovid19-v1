@@ -18,7 +18,7 @@
       <nuxt-link to="/">Dashboard</nuxt-link>
       <nuxt-link to="/facts">Facts</nuxt-link>
       <nuxt-link to="/risk-check">Risk Checker</nuxt-link>
-      <a href="#">Case Tracking</a>
+      <!-- <a href="#">Case Tracking</a> -->
       <!-- <a href="#">Africa</a>
         <a href="#">Worldwide</a> -->
       <nuxt-link target="_blank" to="/funding">Funding</nuxt-link>
@@ -49,7 +49,7 @@
       </div>
       <nuxt-link to="/">Dashbooard</nuxt-link>
       <nuxt-link to="/facts">Facts</nuxt-link>
-      <a href="#">Case Tracking</a>
+      <!-- <a href="#">Case Tracking</a> -->
       <!-- <a href="#">Africa</a>
         <a href="#">Worldwide</a> -->
       <nuxt-link target="_blank" to="/funding">Funding</nuxt-link>
