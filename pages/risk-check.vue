@@ -482,6 +482,10 @@ export default {
 
       if (step === 13) this.reviewEntries()
       if (this.step < step) this.step = step
+
+      // auto scroll
+      const container = document.querySelector('main')
+      container.scrollTop = container.scrollHeight
     },
     async reviewEntries() {
       let totalScore = 0
