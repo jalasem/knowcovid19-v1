@@ -96,7 +96,7 @@ export default {
 }
 */
 .news {
-  @apply pt-16;
+  @apply pt-16 mb-0;
   background: #f7f7f7;
 
   .dashboard {
@@ -112,7 +112,7 @@ export default {
       @apply font-semibold text-xs uppercase;
     }
     .page-title {
-      @apply font-semibold text-2xl capitalize;
+      @apply font-semibold text-2xl;
     }
 
     .content {

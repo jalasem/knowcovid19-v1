@@ -103,13 +103,17 @@ export default {
 }
 */
 .news {
-  @apply pt-16;
+  @apply pt-16 mb-0;
   background: #f7f7f7;
 
   .dashboard {
     @apply mx-auto py-4 px-2 overflow-y-auto;
     max-width: 80rem;
     height: calc(100vh - 10rem);
+
+    @media screen and (min-width: 1280px) {
+      max-width: 100rem;
+    }
 
     .small-title {
       @apply font-semibold text-base uppercase;
