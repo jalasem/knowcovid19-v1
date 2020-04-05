@@ -1,5 +1,5 @@
 <template>
-  <div class="page risk-check">
+  <div class="page factz">
     <nav-bar />
     <main class="dashboard">
       <div class="wrapper">
@@ -90,8 +90,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.risk-check {
-  @apply pt-16 bg-gray-200 flex flex-col h-screen;
+.factz {
+  @apply pt-16 px-2 bg-gray-200 flex flex-col h-screen;
 
   .dashboard {
     @apply py-4 flex-grow overflow-y-auto flex items-stretch;

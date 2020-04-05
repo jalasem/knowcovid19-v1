@@ -18,7 +18,10 @@ export default {
         content: 'Latest updates, myths busters, Fake news tracker for Covid-19'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
+    link: [
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
+    ]
   },
   /*
    ** Customize the progress-bar color

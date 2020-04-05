@@ -16,6 +16,7 @@
     </div>
     <div class="nav-group md:flex hidden">
       <nuxt-link to="/">Dashboard</nuxt-link>
+      <nuxt-link to="/news_updates">News & Infographics</nuxt-link>
       <nuxt-link to="/facts">Facts</nuxt-link>
       <nuxt-link to="/risk-check">Risk Checker</nuxt-link>
       <!-- <a href="#">Case Tracking</a> -->
@@ -47,7 +48,8 @@
           />
         </div>
       </div>
-      <nuxt-link to="/">Dashbooard</nuxt-link>
+      <nuxt-link to="/">Dashboard</nuxt-link>
+      <nuxt-link to="/news_updates">News & Infographics</nuxt-link>
       <nuxt-link to="/facts">Facts</nuxt-link>
       <!-- <a href="#">Case Tracking</a> -->
       <!-- <a href="#">Africa</a>

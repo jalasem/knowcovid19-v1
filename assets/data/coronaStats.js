@@ -2,7 +2,7 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 135,
+      quantity: 209,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
@@ -10,25 +10,27 @@ export default {
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 2
+      quantity: 4
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 9
+      quantity: 25
     }
   },
   statesData: [
-    { state: 'Lagos', total: 81 },
-    { state: 'FCT', total: 25 },
-    { state: 'Ogun', total: 3 },
-    { state: 'Enugu', total: 2 },
-    { state: 'Ekiti', total: 1 },
+    { state: 'Lagos', total: 108 },
+    { state: 'FCT', total: 41 },
+    { state: 'Osun', total: 22 },
     { state: 'Oyo', total: 8 },
-    { state: 'Edo', total: 2 },
-    { state: 'Bauchi', total: 2 },
-    { state: 'Osun', total: 2 },
+    { state: 'Akwa Ibom', total: 5 },
+    { state: 'Ogun', total: 4 },
+    { state: 'Edo', total: 7 },
+    { state: 'Kaduna', total: 4 },
+    { state: 'Bauchi', total: 3 },
+    { state: 'Enugu', total: 2 },
+    { state: 'Ekiti', total: 2 },
     { state: 'Rivers', total: 1 },
     { state: 'Benue', total: 1 },
-    { state: 'Kaduna', total: 3 }
+    { state: 'Ondo', total: 1 }
   ]
 }

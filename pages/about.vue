@@ -78,7 +78,7 @@ export default {
 }
 */
 .about {
-  @apply pt-16;
+  @apply pt-16 px-2;
 
   .dashboard {
     @apply mx-auto py-4;

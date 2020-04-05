@@ -4,7 +4,7 @@
     <main>
       <div class="dashboard">
         <p class="small-title">Dashboard</p>
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col sm:flex-row items-center justify-between">
           <h1 class="page-title">COVID-19 Virus Outbreak: Nigeria</h1>
           <div
             class="data-segments-select border border-indigo-200 rounded py-1 px-4"
@@ -613,7 +613,7 @@ export default {
 
 <style lang="scss">
 .home {
-  @apply pt-16 bg-gray-100;
+  @apply pt-16 px-2 bg-gray-100;
 
   .dashboard {
     @apply mx-auto py-4;

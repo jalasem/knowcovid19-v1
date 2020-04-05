@@ -561,7 +561,7 @@ export default {
 
 <style lang="scss" scoped>
 .risk-check {
-  @apply pt-16 bg-gray-200 flex flex-col h-screen;
+  @apply pt-16 px-2 bg-gray-200 flex flex-col h-screen;
 
   .dashboard {
     @apply mx-auto py-4 flex-grow;
