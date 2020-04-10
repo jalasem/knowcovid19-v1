@@ -19,7 +19,6 @@
           <path
             :id="location.id"
             :style="[{ fill: locationColor(location.state) }]"
-            :class="{ corona: stateHasCorona(location.state) }"
             :d="location.path"
           />
         </a>
@@ -31,14 +30,14 @@
     </div>
     <div
       v-if="hoveringState"
-      class="tooltip text-indigo-900 bg-white border border-indigo-100 rounded fixed z-10 px-2 py-1"
+      class="tooltip text-indigo-900 bg-white border shadow-2xl border-indigo-100 rounded fixed z-10 px-2 py-1"
       :style="{ top: tooltipY + 4 + 'px', left: tooltipX + 4 + 'px' }"
     >
       <span class="block font-medium">{{ hoveredState }} State</span>
       <span v-if="hoveredStateData.total" class="block text-sm text-red-800"
         >{{ hoveredStateData.total }} confirmed cases</span
       >
-      <span v-else class="block text-sm">No confirmed cases yet</span>
+      <span v-else class="block text-sm text-green-800">No cases yet</span>
     </div>
   </div>
 </template>
@@ -344,13 +343,13 @@ export default {
     }
   },
   methods: {
-    stateHasCorona(state) {
-      return Boolean(
-        this.coronaStats.filter(
-          (loc) => loc.state.toLowerCase() === state.toLowerCase()
-        ).length
-      )
-    },
+    // stateHasCorona(state) {
+    //   return Boolean(
+    //     this.coronaStats.filter(
+    //       (loc) => loc.state.toLowerCase() === state.toLowerCase()
+    //     ).length
+    //   )
+    // },
     hoverState(event, state) {
       this.tooltipX = event.x
       this.tooltipY = event.y
@@ -392,7 +391,6 @@ export default {
     }
 
     path {
-      // fill: $green;
       fill: #f7f7f7;
       // stroke: $tertiary;
       stroke: $primary;
@@ -400,12 +398,8 @@ export default {
       transition: fill 0.3s ease-in-out;
 
       &:hover {
-        // fill: #0e661f;
         fill: $tertiary;
         cursor: pointer;
-      }
-      &.corona {
-        fill: red;
       }
     }
   }
