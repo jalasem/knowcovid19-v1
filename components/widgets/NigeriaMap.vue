@@ -343,13 +343,6 @@ export default {
     }
   },
   methods: {
-    // stateHasCorona(state) {
-    //   return Boolean(
-    //     this.coronaStats.filter(
-    //       (loc) => loc.state.toLowerCase() === state.toLowerCase()
-    //     ).length
-    //   )
-    // },
     hoverState(event, state) {
       this.tooltipX = event.x
       this.tooltipY = event.y
