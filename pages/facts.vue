@@ -1,5 +1,5 @@
 <template>
-  <div class="page factz">
+  <div class="page factz" @contextmenu.prevent>
     <nav-bar />
     <main class="dashboard">
       <div class="wrapper">
@@ -94,7 +94,7 @@ export default {
   @apply pt-16 px-2 bg-gray-200 flex flex-col h-screen;
 
   .dashboard {
-    @apply py-4 flex-grow overflow-y-auto flex items-stretch;
+    @apply py-4 flex-grow overflow-y-auto flex items-stretch select-none;
 
     .small-title {
       @apply font-semibold text-xs uppercase;

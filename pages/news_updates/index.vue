@@ -22,6 +22,12 @@
           </template>
           <template v-else>
             <div v-for="post in posts" :key="`post-${post.id}`" class="post">
+              <img
+                v-if="post.better_featured_image"
+                class="w-full rounded rounded-b-none"
+                :src="post.better_featured_image.source_url"
+                alt=""
+              />
               <div class="text">
                 <h2
                   class="post-title"
@@ -32,6 +38,17 @@
                   class="post-summary"
                   v-html="post.excerpt.rendered.replace('[&hellip;]', '...')"
                 />
+                <p class="post-date uppercase my-3 text-gray-700">
+                  Posted on
+                  <span class="font-medium">
+                    {{
+                      // new Intl.DateTimeFormat('en-US').format(
+                      //  new Date(post.date)
+                      //)
+                      new Date(post.date).toDateString()
+                    }}
+                  </span>
+                </p>
                 <a
                   v-ripple
                   class="text-white bg-orange-500 px-5 py-2 rounded mt-5 mb-1 w-40 font-medium hover:bg-indigo-600 block text-center cursor-pointer"
@@ -118,7 +135,7 @@ export default {
     .content {
       @apply col-gap-8;
       column-width: 30rem;
-      column-count: 2;
+      column-count: 3;
       column-break-inside: avoid;
       // display: grid;
       // grid-gap: 10px;

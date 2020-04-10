@@ -16,13 +16,13 @@
     </div>
     <div class="nav-group md:flex hidden">
       <nuxt-link to="/">Dashboard</nuxt-link>
-      <nuxt-link to="/news_updates">News & Infographics</nuxt-link>
+      <nuxt-link to="/news_updates">News</nuxt-link>
       <nuxt-link to="/facts">Facts</nuxt-link>
       <nuxt-link to="/risk-check">Risk Checker</nuxt-link>
       <!-- <a href="#">Case Tracking</a> -->
       <!-- <a href="#">Africa</a>
         <a href="#">Worldwide</a> -->
-      <nuxt-link target="_blank" to="/funding">Funding</nuxt-link>
+      <nuxt-link target="_blank" to="/funding">Support us</nuxt-link>
       <!-- <a href="#">Supplies/Tracking</a> -->
       <nuxt-link to="/about">About</nuxt-link>
     </div>
@@ -49,17 +49,18 @@
         </div>
       </div>
       <nuxt-link to="/">Dashboard</nuxt-link>
-      <nuxt-link to="/news_updates">News & Infographics</nuxt-link>
+      <nuxt-link to="/news_updates">News</nuxt-link>
       <nuxt-link to="/facts">Facts</nuxt-link>
+      <nuxt-link to="/risk-check">Risk Checker</nuxt-link>
       <!-- <a href="#">Case Tracking</a> -->
       <!-- <a href="#">Africa</a>
         <a href="#">Worldwide</a> -->
-      <nuxt-link target="_blank" to="/funding">Funding</nuxt-link>
+      <nuxt-link target="_blank" to="/funding">Support us</nuxt-link>
       <!-- <a
         target="_blank"
         rel="noopener noreferrer nofollow"
         href=""
-        >Funding</a
+        >Support us</a
       > -->
       <!-- <a href="#">Supplies/Tracking</a> -->
       <nuxt-link to="/about">About</nuxt-link>
@@ -132,6 +133,10 @@ nav {
         @apply bg-indigo-100;
       }
     }
+  }
+
+  a.active-link {
+    @apply text-orange-600;
   }
 }
 </style>

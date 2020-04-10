@@ -1,13 +1,13 @@
 <template>
   <div class="page risk-check">
     <nav-bar />
-    <main class="overflow-y-auto">
+    <main id="main" class="overflow-y-auto">
       <div class="dashboard select-none">
         <p class="small-title">Risk Checker</p>
         <div class="flex items-center justify-between mb-5">
           <h1 class="page-title mb-2">Coronavirus Self assesment</h1>
         </div>
-        <div class="content assesment">
+        <div class="content assesment" @click="scrollDown">
           <template v-if="step === 0">
             <p class="question">
               Hello! This risk check self assesment was developed based on the
@@ -389,7 +389,7 @@
               >
             </div>
           </div>
-          <div v-if="riskLevel === 'Low'" class="text-center">
+          <div v-if="riskLevel.toLowerCase() === 'low'" class="text-center">
             <img src="/images/slow.png" alt="" class="risk-indicator" />
             <p class="text-3xl mb-3 text-orange-600 font-semibold">
               You are at low risk
@@ -482,9 +482,13 @@ export default {
 
       if (step === 13) this.reviewEntries()
       if (this.step < step) this.step = step
+      this.scrollDown()
+    },
+    scrollDown() {
+      let container = this.$el.querySelector('#main')
+      container.scrollTop = container.scrollHeight
 
-      // auto scroll
-      const container = document.querySelector('main')
+      container = document.querySelector('#main')
       container.scrollTop = container.scrollHeight
     },
     async reviewEntries() {
@@ -561,7 +565,7 @@ export default {
 
 <style lang="scss" scoped>
 .risk-check {
-  @apply pt-16 px-2 bg-gray-200 flex flex-col h-screen;
+  @apply pt-16 px-4 bg-gray-200 flex flex-col h-screen;
 
   .dashboard {
     @apply mx-auto py-4 flex-grow;

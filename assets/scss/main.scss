@@ -46,3 +46,11 @@ html, body {
 .primary-text {
   color: $primary;
 }
+
+
+.post-content {
+  img {
+    @apply my-10 rounded block mx-auto;
+    min-width: 40%;
+  }
+}

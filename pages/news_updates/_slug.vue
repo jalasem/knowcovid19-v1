@@ -19,7 +19,7 @@
           <!-- <h1 class="page-title">COVID19 Updates and Infographics</h1> -->
         </div>
 
-        <div class="content py-5">
+        <div class="content pt-5">
           <template v-if="fetchingPost">
             <div class="post loading-placeholder flex flex-col">
               <span class="animated-loader h-8 mb-3" />
@@ -45,7 +45,43 @@
                     }}
                   </span>
                 </p>
-                <div v-html="post.content.rendered" />
+                <div class="post-content" v-html="post.content.rendered" />
+              </div>
+            </div>
+            <div v-if="!fetchingPost && post" class="px-4 -pt-3">
+              <h4 class="text-xl font-semibold text-center mt-8">SHARE</h4>
+              <div class="flex justify-center items-center share">
+                <a
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                  :href="`https://www.facebook.com/share.php?v=4&u=${postUrl}`"
+                  class="fb"
+                >
+                  <img src="/images/facebook.png" alt="fb" class="icon" />
+                </a>
+                <a
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                  :href="`https://twitter.com/home?status=${postUrl}`"
+                  class="tw"
+                >
+                  <img src="/images/twitter.png" alt="twitter" class="icon" />
+                </a>
+                <!-- <a
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                  class="ig"
+                  :href="``"
+                >
+                  <img src="/images/instagram.png" alt="IG" class="icon" />
+                </a> -->
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  :href="`whatsapp://send?text=${postUrl}`"
+                >
+                  <img src="/images/whatsapp.png" alt="whatsapp" class="icon" />
+                </a>
               </div>
             </div>
           </template>
@@ -73,6 +109,11 @@ export default {
       slug,
       post,
       fetchingPost: !post
+    }
+  },
+  computed: {
+    postUrl() {
+      return window.location.href
     }
   },
   mounted() {
@@ -107,7 +148,7 @@ export default {
   background: #f7f7f7;
 
   .dashboard {
-    @apply mx-auto py-4 px-2 overflow-y-auto;
+    @apply mx-auto pt-4 px-2 overflow-y-auto;
     max-width: 80rem;
     height: calc(100vh - 10rem);
 
@@ -124,7 +165,7 @@ export default {
 
     .content {
       .post {
-        @apply mb-8 bg-white w-full mx-auto rounded shadow-xs;
+        @apply bg-white w-full mx-auto rounded shadow-xs;
         -webkit-column-break-inside: avoid;
         page-break-inside: avoid;
         break-inside: avoid;
@@ -147,6 +188,17 @@ export default {
 
   main {
     @apply px-4 pb-24;
+  }
+}
+
+.share {
+  @apply my-5;
+
+  a {
+    @apply mx-1 p-1 cursor-pointer;
+  }
+  img {
+    @apply h-8 w-8;
   }
 }
 

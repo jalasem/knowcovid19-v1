@@ -6,19 +6,31 @@
       <img src="/images/logo.png" alt="Knowcovid19.ng" class="h-10" />
     </nuxt-link>
     <div class="social">
-      <a href="#">
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://twitter.com/KnowCovid19"
+      >
         <img src="/images/twitter.png" alt="twitter" class="icon" />
-      </a>
-      <a href="#">
-        <img src="/images/facebook.png" alt="fb" class="icon" />
-      </a>
-      <a href="#">
-        <img src="/images/linkedin.png" alt="linkedin" class="icon" />
       </a>
       <a
         rel="noopener noreferrer"
         target="_blank"
-        href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.now.sh"
+        href="https://www.facebook.com/Know-Covid-19-110856247214930/"
+      >
+        <img src="/images/facebook.png" alt="fb" class="icon" />
+      </a>
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://instagram.com/knowcovid19?igshid=eypq1dvfvc0a"
+      >
+        <img src="/images/instagram.png" alt="IG" class="icon" />
+      </a>
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.ng/risk-check"
       >
         <img src="/images/whatsapp.png" alt="whatsapp" class="icon" />
       </a>

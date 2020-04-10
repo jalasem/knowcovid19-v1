@@ -18,6 +18,7 @@
         >
           <path
             :id="location.id"
+            :style="[{ fill: locationColor(location.state) }]"
             :class="{ corona: stateHasCorona(location.state) }"
             :d="location.path"
           />
@@ -30,13 +31,14 @@
     </div>
     <div
       v-if="hoveringState"
-      class="tooltip text-indigo-900 bg-white border border-indigo-100 rounded fixed z-10 px-1 py-0"
-      :style="{ top: tooltipY + 3 + 'px', left: tooltipX + 3 + 'px' }"
+      class="tooltip text-indigo-900 bg-white border border-indigo-100 rounded fixed z-10 px-2 py-1"
+      :style="{ top: tooltipY + 4 + 'px', left: tooltipX + 4 + 'px' }"
     >
       <span class="block font-medium">{{ hoveredState }} State</span>
-      <span v-if="hoveredStateData.total" class="block text-sm"
-        >Total: {{ hoveredStateData.total }}</span
+      <span v-if="hoveredStateData.total" class="block text-sm text-red-800"
+        >{{ hoveredStateData.total }} confirmed cases</span
       >
+      <span v-else class="block text-sm">No confirmed cases yet</span>
     </div>
   </div>
 </template>
@@ -311,6 +313,19 @@ export default {
         path:
           'M413.1 389.4l0.2 1.7-0.3 1.6-1 0.7-1 0.3-1.5 2.7-1.9 9.1-0.2 5.2 0.3 8.3-3.9 17-3.6 10-2.9 4.8-3.7 4-10.7 5.4-11.7 3.1-12 1.9-3.7 0.6-3.1-0.4-5.1 0.2-3.8-0.4-2-3.6-0.5-1.5-0.8-60.1 0.4-2.4 2-0.9 15.4-0.6 5 1.5 7.7 7.6 4 2.2 0.5-0.1 11.7-16.7 7.9-0.9 2.3 0.1 2.3 0.3 2.1 0.9 1.8-1.3 2.6-3.7 3 1.1 1.5 2.9 2.7-0.6z'
       }
+    ],
+    redScale: [
+      '#ffebee',
+      '#ffcdd2',
+      '#ef9a9a',
+      '#e57373',
+      '#ef5350',
+      '#f44336',
+      '#e53935',
+      '#d32f2f',
+      '#c62828',
+      '#b71c1c',
+      '#8e0000'
     ]
   }),
   computed: {
@@ -341,6 +356,20 @@ export default {
       this.tooltipY = event.y
       this.hoveredState = state
       this.hoveringState = true
+    },
+    locationColor(state) {
+      const data = this.coronaStats.filter(
+        (loc) => loc.state.toLowerCase() === state.toLowerCase()
+      )
+
+      if (data.length) {
+        let num = data[0].total
+        num =
+          Math.round((num * this.redScale.length) / (this.totalCases / 2)) || 1
+        if (num > this.redScale.length - 1) num -= 2
+
+        return this.redScale[num]
+      }
     }
   }
 }

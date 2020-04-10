@@ -40,7 +40,7 @@
             </template>
           </div>
           <div
-            class="mapbox col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-3 flex-grow border-2 border-indigo-100 rounded py-4 px-12"
+            class="mapbox col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-3 flex-grow border-2 border-indigo-100 rounded pt-4 lg:pb-20 px-12 sm:pb-56"
           >
             <nigeria-map />
           </div>
@@ -648,7 +648,10 @@ export default {
     }
 
     .mapbox {
-      @apply pb-20;
+      @media (max-width: 640px) {
+        /* ... */
+        display: none;
+      }
     }
 
     .mapbox,
