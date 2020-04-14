@@ -1,13 +1,14 @@
 <template>
   <div class="nigeria-map widget">
-    <div class="map max-w-full">
+    <div class="map">
       <svg
-        version="1.2"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 60 55"
-        preserveAspectRatio="xMidYMin slice"
+        xmlns:link="http://www.w3.org/1999/xlink"
+        viewBox="0 0 101 100"
         width="100%"
-        data-v-034bc3e8=""
+        heigth="100%"
+        x2="50%"
+        y2="40%"
         @mouseleave.self="hoveringState = false"
       >
         <!-- :xlink:title="location.state" -->
@@ -368,16 +369,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mapbox {
-  @apply bg-green-100 h-full w-full flex justify-center;
+.map {
+  @apply w-full max-w-full;
+  height: 40vh;
+  display: table-cell;
+
+  @media (max-width: 1023px) {
+    height: 35vh;
+  }
 
   svg {
     transform: scale(0.5);
     padding: 0;
-    margin-top: -10%;
-    padding-bottom: 55%;
-    height: 1px;
+    // margin-top: -10%;
     overflow: visible;
+    height: 10vh;
+    // width: 25%;
+
+    @media (max-width: 1023px) {
+      height: 11vh;
+      margin-left: -2.5vw;
+    }
+    @media (max-width: 780px) {
+      margin-left: -14vw;
+    }
 
     * {
       max-width: 100%;
