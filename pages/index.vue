@@ -244,6 +244,35 @@
             </div>
           </div>
           <div
+            class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 help-lines"
+          >
+            <header>COVID-19 Helplines</header>
+            <div class="content">
+              <div
+                v-for="({ state, helplines },
+                stateIndex) in coronaStats.helplines"
+                :key="`helpline-${stateIndex}`"
+                class="border border-orange-300 mb-1 rounded"
+              >
+                <div
+                  class="border-b border-orange-300 px-3 py-2 font-semibold"
+                  v-text="state"
+                />
+                <div
+                  class="px-4 py-2 text-2xl font-light max-w-full flex flex-wrap"
+                >
+                  <span
+                    v-for="(line, lineIndex) in helplines"
+                    :key="`${state}-state-line-${lineIndex}`"
+                    v-text="
+                      `${line}${lineIndex === helplines.length - 1 ? '' : ', '}`
+                    "
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
             class="case-tracking box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-3"
           >
             <header>Cases Tracking</header>
@@ -871,6 +900,13 @@ export default {
         @apply list-disc;
       }
     }
+  }
+}
+
+.help-lines {
+  .content {
+    max-height: 85vh;
+    overflow-y: auto;
   }
 }
 </style>
