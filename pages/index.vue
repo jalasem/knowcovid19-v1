@@ -881,10 +881,10 @@ export default {
 }
 
 .faq {
-  @apply border-2 border-orange-300 mb-1 rounded;
+  @apply border border-orange-300 mb-1 rounded;
 
   .question {
-    @apply flex justify-between items-center py-1 px-3 text-base cursor-pointer font-semibold border-b-2 border-orange-300;
+    @apply flex justify-between items-center py-1 px-3 text-base cursor-pointer font-semibold border-b border-orange-300;
 
     .toggle {
       @apply text-2xl;
