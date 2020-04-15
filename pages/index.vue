@@ -24,7 +24,7 @@
         </div>
 
         <div
-          class="statistics grid gap-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1"
+          class="statistics grid gap-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1"
         >
           <div
             class="col-span-4 grid gap-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1"
@@ -70,7 +70,7 @@
             </div>
           </div>
           <div
-            class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 case-state"
+            class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-2 case-state"
           >
             <header>
               <span>Cases per state</span>
@@ -100,7 +100,7 @@
             </div>
           </div>
           <div
-            class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 flex flex-col items-stretch"
+            class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-2 flex flex-col items-stretch"
           >
             <div class="flex justify-between items-center">
               <header>Early Infection Sources</header>
@@ -159,7 +159,7 @@
             </div>
           </div>
           <div
-            class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 faq-box"
+            class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-2 faq-box"
           >
             <header>COVID-19 Knowledge box</header>
             <div class="content">
@@ -244,16 +244,27 @@
             </div>
           </div>
           <div
-            class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 help-lines"
+            class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-2 help-lines"
           >
             <header>
-              COVID-19 Helplines
-              <sub>(Click to call)</sub>
+              <div class="flex justify-between">
+                <div>
+                  COVID-19 Helplines
+                  <span class="text-sm font-normal">(Click to call)</span>
+                </div>
+                <div class="border rounded-full py-1 px-2">
+                  <input
+                    v-model="helplineFilter"
+                    type="search"
+                    placeholder="Filter State"
+                    class="border-none focus:outline-none"
+                  />
+                </div>
+              </div>
             </header>
             <div class="content">
               <div
-                v-for="({ state, helplines },
-                stateIndex) in coronaStats.helplines"
+                v-for="({ state, helplines }, stateIndex) in filteredHelplines"
                 :key="`helpline-${stateIndex}`"
                 class="border border-orange-300 mb-1 rounded"
               >
@@ -700,7 +711,8 @@ export default {
       { label: 'Active', field: 'active' },
       { label: 'Recovered', field: 'recovered' },
       { label: 'Death', field: 'death' }
-    ]
+    ],
+    helplineFilter: ''
   }),
   computed: {
     chartData() {
@@ -753,6 +765,13 @@ export default {
             data.state.toLowerCase().includes(this.statesFilter.toLowerCase())
         )
         .sort((a, b) => b.total - a.total)
+    },
+    filteredHelplines() {
+      return this.coronaStats.helplines.filter(
+        (data) =>
+          !this.helplineFilter.length ||
+          data.state.toLowerCase().includes(this.helplineFilter.toLowerCase())
+      )
     }
   },
   methods: {
