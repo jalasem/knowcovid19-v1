@@ -1,7 +1,9 @@
 <template>
   <div class="data-table">
-    <div class="t-head">
-      <span class="th">S/N</span>
+    <!-- <div class="t-head">
+    </div> -->
+    <div class="t-body">
+      <span class="th border-r">S/N</span>
       <span
         v-for="(column, columnIndex) in columns"
         :key="`column-${columnIndex}`"
@@ -9,8 +11,6 @@
         :class="column.field"
         v-text="column.label"
       />
-    </div>
-    <div class="t-body">
       <template v-for="(row, rowIndex) of rows">
         <span
           :key="`${id ? id + '-table' : 'table'}-row-${rowIndex}-SN`"
@@ -69,9 +69,17 @@ export default {
     @apply bg-gray-200 border border-gray-100 font-medium;
   }
 
+  .th {
+    @apply border-b font-medium;
+  }
+
   .th,
   .td {
     @apply py-2 px-3 text-sm text-center;
+
+    @media (max-width: 640px) {
+      @apply text-xs px-1;
+    }
   }
 
   .td {

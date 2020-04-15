@@ -73,7 +73,7 @@
             class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-2 case-state"
           >
             <header>
-              <span>Cases per state</span>
+              <span class="mb-1">Cases per state</span>
               <div class="rounded-full border-2 py-1 px-3">
                 <input
                   v-model.trim="statesFilter"
@@ -102,10 +102,10 @@
           <div
             class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-2 flex flex-col items-stretch"
           >
-            <div class="flex justify-between items-center">
-              <header>Early Infection Sources</header>
+            <div class="flex justify-between items-center flex-wrap">
+              <header class="mb-1">Early Infection Sources</header>
               <button
-                class="rounded-full mr-2 py-1 px-6 bg-orange-600 text-white"
+                class="rounded-full mr-2 py-1 px-6 mx-2 bg-orange-600 text-white"
                 @click="$eventBus.$emit('report-case')"
               >
                 Report now
@@ -247,8 +247,8 @@
             class="box col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-2 help-lines"
           >
             <header>
-              <div class="flex justify-between">
-                <div>
+              <div class="flex justify-between items-center flex-wrap">
+                <div class="mb-1">
                   COVID-19 Helplines
                   <span class="text-sm font-normal">(Click to call)</span>
                 </div>
@@ -843,7 +843,7 @@ export default {
 
     .case-state {
       header {
-        @apply flex justify-between items-center;
+        @apply flex justify-between items-center flex-wrap;
       }
     }
 
@@ -851,12 +851,6 @@ export default {
       @apply relative flex-grow border-orange-400;
       min-height: 20rem;
       max-height: stretch;
-
-      // &:before {
-      //   @apply h-full border-l-2 border-orange-400 absolute top-0;
-      //   content: '';
-      //   left: 1rem;
-      // }
     }
 
     .case-source {
@@ -865,13 +859,6 @@ export default {
       .info {
         @apply flex-grow;
       }
-
-      // &:before {
-      //   @apply top-0 left-0 w-3 h-3 bg-red-700 rounded-full absolute;
-      //   content: '';
-      //   margin-top: 1.5rem;
-      //   margin-left: -1.3rem;
-      // }
     }
   }
 
