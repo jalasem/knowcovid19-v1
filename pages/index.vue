@@ -69,28 +69,41 @@
               <corona-checker v-if="showChecker" />
             </div>
           </div>
-          <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2">
-            <header>Cases per state</header>
+          <div
+            class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 case-state"
+          >
+            <header>
+              <span>Cases per state</span>
+              <div class="rounded-full border-2 py-1 px-3">
+                <input
+                  v-model.trim="statesFilter"
+                  type="search"
+                  class="boorder-0 focus:outline-none"
+                  placeholder="Filter State"
+                />
+              </div>
+            </header>
             <div class="content">
               <GChart
+                v-if="caseView === 'chart'"
                 class="h-64"
                 type="PieChart"
                 :data="chartData"
                 :options="chartOptions"
               />
+              <case-table
+                v-else
+                id="case-by-state"
+                :columns="caseColumns"
+                :rows="computedFilteredStates"
+              />
             </div>
           </div>
-          <!-- <div class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1">
-            <header>Age and Gender Distribution</header>
-            <div class="content h-64">
-              chart shows here
-            </div>
-          </div> -->
           <div
             class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 flex flex-col items-stretch"
           >
             <div class="flex justify-between items-center">
-              <header>Infection Sources</header>
+              <header>Early Infection Sources</header>
               <button
                 class="rounded-full mr-2 py-1 px-6 bg-orange-600 text-white"
                 @click="$eventBus.$emit('report-case')"
@@ -145,6 +158,7 @@
               </div>
             </div>
           </div>
+
           <div
             class="case-tracking box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-3"
           >
@@ -286,6 +300,7 @@ import NavBar from '~/components/layout/navbar.vue'
 import Knowvid19Footer from '~/components/layout/footer.vue'
 import CoronaChecker from '~/components/widgets/CoronaChecker.vue'
 import NigeriaMap from '~/components/widgets/NigeriaMap.vue'
+import CaseTable from '~/components/widgets//dataTable.vue'
 
 import coronaStats from '~/assets/data/coronaStats'
 
@@ -295,7 +310,8 @@ export default {
     Knowvid19Footer,
     GChart,
     NigeriaMap,
-    CoronaChecker
+    CoronaChecker,
+    CaseTable
   },
   data: () => ({
     coronaStats,
@@ -557,7 +573,16 @@ export default {
       pieHole: 0.4,
       title: 'Case per state',
       subtitle: 'Sales, Expenses, and Profit: 2014-2017'
-    }
+    },
+    statesFilter: '',
+    caseView: 'table',
+    caseColumns: [
+      { label: 'State', field: 'state', filterable: true },
+      { label: 'Total', field: 'total' },
+      { label: 'Active', field: 'active' },
+      { label: 'Recovered', field: 'recovered' },
+      { label: 'Death', field: 'death' }
+    ]
   }),
   computed: {
     chartData() {
@@ -595,6 +620,21 @@ export default {
       ).toPrecision(2)}% of total cases`
 
       return statObj
+    },
+    computedFilteredStates() {
+      return this.coronaStats.statesData
+        .map((data) => {
+          const { total, death, recovered } = data
+          data.active = total - (death + recovered)
+
+          return data
+        })
+        .filter(
+          (data) =>
+            !this.statesFilter.length ||
+            data.state.toLowerCase().includes(this.statesFilter.toLowerCase())
+        )
+        .sort((a, b) => b.total - a.total)
     }
   },
   methods: {
@@ -664,9 +704,16 @@ export default {
       }
     }
 
+    .case-state {
+      header {
+        @apply flex justify-between items-center;
+      }
+    }
+
     .case-source-wrapper {
-      @apply relative flex-grow border-l-2 border-orange-400 ml-4;
-      max-height: 20rem;
+      @apply relative flex-grow border-orange-400;
+      min-height: 20rem;
+      max-height: stretch;
 
       // &:before {
       //   @apply h-full border-l-2 border-orange-400 absolute top-0;
@@ -676,18 +723,18 @@ export default {
     }
 
     .case-source {
-      @apply border py-1 px-2 mb-2 ml-2 relative flex items-center;
+      @apply border py-1 px-2 mb-2 relative flex items-center;
 
       .info {
         @apply flex-grow;
       }
 
-      &:before {
-        @apply top-0 left-0 w-3 h-3 bg-red-700 rounded-full absolute;
-        content: '';
-        margin-top: 1.5rem;
-        margin-left: -1.3rem;
-      }
+      // &:before {
+      //   @apply top-0 left-0 w-3 h-3 bg-red-700 rounded-full absolute;
+      //   content: '';
+      //   margin-top: 1.5rem;
+      //   margin-left: -1.3rem;
+      // }
     }
   }
 

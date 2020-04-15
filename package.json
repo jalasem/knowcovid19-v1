@@ -32,6 +32,7 @@
     "nuxt": "^2.0.0",
     "vue-apexcharts": "^1.5.2",
     "vue-chartjs": "^3.5.0",
+    "vue-good-table": "^2.19.1",
     "vue-google-charts": "^0.3.2",
     "vue-loading-overlay": "^3.3.2",
     "vue-ripple-directive": "^2.0.1"
