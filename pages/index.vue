@@ -158,7 +158,91 @@
               </div>
             </div>
           </div>
-
+          <div
+            class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 faq-box"
+          >
+            <header>COVID-19 Knowledge box</header>
+            <div class="content">
+              <div class="faq">
+                <div class="question">
+                  <span>Coronavirus vs COVID-19</span>
+                  <span class="toggle">+</span>
+                </div>
+                <div class="answer">
+                  <p>
+                    Coronaviruses (according to
+                    <span title="World Health Organization">WHO</span>) are a
+                    family of viruses that cause illnesses ranging from the
+                    common cold to more severe diseases such as severe acute
+                    respiratory syndrome (SARS) and the Middle East respiratory
+                    syndrome (MERS).
+                  </p>
+                  <p>
+                    Their original mode of transmission were Animal to human
+                  </p>
+                  <p>
+                    <span class="font-medium">COVID-19</span> is an acronym.
+                  </p>
+                  <ul>
+                    <li>
+                      <span class="font-medium">'CO'</span> stands for
+                      Coronavirus
+                    </li>
+                    <li>
+                      <span class="font-medium">'VI'</span> stands for Virus
+                    </li>
+                    <li>
+                      <span class="font-medium">'D'</span> stads for Disease
+                    </li>
+                    <li>
+                      <span class="font-medium">'19'</span>stands for the year
+                      it was first discovered, 2019
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <span>COVID-19 Symptoms</span>
+                  <span class="toggle">+</span>
+                </div>
+                <div class="answer">
+                  <p>
+                    COVID-19 symptoms includes;
+                  </p>
+                  <ul>
+                    <li>Fever</li>
+                    <li>Breathing difficulties</li>
+                    <li>Cough</li>
+                  </ul>
+                  <p>
+                    It can lead to pneumonia, multiple organ failure and even
+                    death in severe cases
+                  </p>
+                  <p>
+                    <span class="font-medium"
+                      >Estimates of the incubation period -</span
+                    >
+                    the time between infection and the onset of symptoms - range
+                    from one to 14 days. Most infected people show symptoms
+                    within five to six days
+                  </p>
+                  <p>
+                    <span class="font-medium">Asymptomatic -</span>
+                    Infected patients that do not display any symptoms despite
+                    having the virus in their systems are considered to be
+                    asymptomatic
+                  </p>
+                </div>
+              </div>
+              <div class="mt-2 rounded bg-gray-200 py-1 px-3 text-sm">
+                <span class="font-medium">Sources:</span>
+                <span>
+                  NCDC, WHO, CDC USA
+                </span>
+              </div>
+            </div>
+          </div>
           <div
             class="case-tracking box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-3"
           >
@@ -759,6 +843,34 @@ export default {
 
   main {
     @apply px-4 pb-24;
+  }
+}
+
+.faq {
+  @apply border-2 border-orange-300 mb-1 rounded;
+
+  .question {
+    @apply flex justify-between items-center py-1 px-3 text-base cursor-pointer font-semibold border-b-2 border-orange-300;
+
+    .toggle {
+      @apply text-2xl;
+    }
+  }
+
+  .answer {
+    @apply py-2 px-4;
+
+    p {
+      @apply mb-2;
+    }
+
+    ul {
+      @apply pl-6 py-1 mb-1;
+
+      li {
+        @apply list-disc;
+      }
+    }
   }
 }
 </style>
