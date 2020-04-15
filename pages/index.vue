@@ -246,7 +246,10 @@
           <div
             class="box col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 help-lines"
           >
-            <header>COVID-19 Helplines</header>
+            <header>
+              COVID-19 Helplines
+              <sub>(Click to call)</sub>
+            </header>
             <div class="content">
               <div
                 v-for="({ state, helplines },
@@ -261,9 +264,11 @@
                 <div
                   class="px-4 py-2 text-2xl font-light max-w-full flex flex-wrap"
                 >
-                  <span
+                  <a
                     v-for="(line, lineIndex) in helplines"
                     :key="`${state}-state-line-${lineIndex}`"
+                    :href="`tel:+234${line.substring(1)}`"
+                    class="hover:underline"
                     v-text="
                       `${line}${lineIndex === helplines.length - 1 ? '' : ', '}`
                     "
