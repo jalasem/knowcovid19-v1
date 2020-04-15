@@ -927,9 +927,10 @@ export default {
   }
 }
 
+.faq-box,
 .help-lines {
   .content {
-    max-height: 85vh;
+    max-height: 80vh;
     overflow-y: auto;
   }
 }

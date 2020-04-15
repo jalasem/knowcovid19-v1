@@ -321,11 +321,11 @@ export default {
       '#e57373',
       '#ef5350',
       '#f44336',
-      '#e53935',
-      '#d32f2f',
-      '#c62828',
-      '#b71c1c',
-      '#8e0000'
+      '#e53935'
+      // '#d32f2f'
+      // '#c62828',
+      // '#b71c1c',
+      // '#8e0000'
     ]
   }),
   computed: {
@@ -357,9 +357,7 @@ export default {
 
       if (data.length) {
         let num = data[0].total
-        num =
-          Math.round((num * this.redScale.length) / (this.totalCases / 2)) || 1
-        if (num > this.redScale.length - 1) num -= 2
+        num = Math.round((num * (this.redScale.length - 1)) / this.totalCases)
 
         return this.redScale[num]
       }
