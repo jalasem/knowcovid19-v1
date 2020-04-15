@@ -235,11 +235,93 @@
                   </p>
                 </div>
               </div>
+              <div class="faq">
+                <div class="question">
+                  <span
+                    >Face mask vs. face covering: What's the difference?</span
+                  >
+                  <span class="toggle">+</span>
+                </div>
+                <div class="answer">
+                  <p>
+                    The CDC stresses the use of "face coverings" in its
+                    recommendation, not necessarily "face masks." So what's the
+                    difference? A face covering can be any cloth that covers the
+                    nose and mouth, including a scarf or bandana wrapped around
+                    the face.
+                  </p>
+                  <p>
+                    A face mask refers to a more specific shape that usually
+                    involves material that's more fitted to the nose, mouth and
+                    skull, as through the use of ear straps.
+                  </p>
+                  <p>
+                    It's possible that "face covering" is used to differentiate
+                    coverings from surgical and N95 respirator masks that are so
+                    critically low in hospitals in New York and the rest of the
+                    country.
+                  </p>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <span>Personal Protective Equipments(PPEs)</span>
+                  <span class="toggle">+</span>
+                </div>
+                <div class="answer">
+                  <p class="font-medium">What are PPEs ?</p>
+                  <p>
+                    PPEs are Personal Protective Equipments or specialized
+                    clothing to keep one safe while working. PPE include items
+                    like gloves, masks, gowns and goggles.
+                  </p>
+
+                  <p class="font-medium">How Does PPE Protect me?</p>
+                  <p>
+                    Your PPE gear protects you from infection by creating a
+                    barrier between you and the infection. This barrier reduces
+                    the chance of touching, being exposed to, and spreading
+                    germs.
+                  </p>
+                  <p>
+                    PPE gear is effective protection for health workers/ people
+                    with close contact with infected person if worn, removed,
+                    and disposed off correctly and appropriately.
+                  </p>
+                  <p>
+                    As we learned earlier, COVID-19 is primarily transmitted
+                    through droplets and direct / indirect contact with
+                    contaminated surfaces.
+                  </p>
+
+                  <p class="font-medium">
+                    Do I need any Personal Protective Equipment (PPE) for myself
+                    ?
+                  </p>
+                  <p>
+                    No, so far you ain't an health worker, not in close range
+                    (less than 2m) with an infected person or suspected case and
+                    it's not recommended by the local authorities of your
+                    community
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="faq">
+                <div class="question">
+                  <span></span>
+                  <span class="toggle">+</span>
+                </div>
+                <div class="answer"></div>
+              </div> -->
               <div class="mt-2 rounded bg-gray-200 py-1 px-3 text-sm">
                 <span class="font-medium">Sources:</span>
-                <span>
-                  NCDC, WHO, CDC USA
-                </span>
+                <span title="Nigeria Centre for Disease Control">NCDC</span>,
+                <span title="World Health Organization">WHO</span>,
+                <span title="Center for Diseases Control">CDC</span>,
+                <span
+                  title="Mohammed Bin Rashid University of Medicine and Health Sciences"
+                  >MBRU</span
+                >
               </div>
             </div>
           </div>
