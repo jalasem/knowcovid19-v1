@@ -2,38 +2,39 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity:493,
+      quantity:542,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
-      heading: 'Currently Hospitalized'
+      heading: 'Currently Hospitalized',
+      quantity: 357
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 17
+      quantity: 19
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 159
+      quantity: 166
     }
   },
   statesData: [
-    { state: 'Lagos', total: 293, recovered: 90, death: 11 },
+    { state: 'Lagos', total: 306, recovered: 93, death: 13 },
     { state: 'FCT', total: 69, recovered: 23, death: 2 },
-    { state: 'Osun', total: 20, recovered: 17, death: 0 },
-    { state: 'Kano', total: 27, recovered: 0, death: 1 },
+    { state: 'Osun', total: 20, recovered: 18, death: 0 },
+    { state: 'Kano', total: 37, recovered: 0, death: 1 },
     { state: 'Edo', total: 15, recovered:6, death: 1 },
-    { state: 'Oyo', total: 15, recovered: 5, death: 0 },
-    { state: 'Ogun', total: 10, recovered: 5, death: 0 },
+    { state: 'Oyo', total: 16, recovered: 5, death: 0 },
+    { state: 'Ogun', total: 12, recovered: 5, death: 0 },
     { state: 'Katsina', total: 9, recovered: 0, death: 1 },
-    { state: 'Bauchi', total: 6, recovered: 0, death: 0 },
-    { state: 'Kaduna', total: 6, recovered: 6, death: 0 },
+    { state: 'Bauchi', total: 6, recovered: 1, death: 0 },
+    { state: 'Kaduna', total: 6, recovered: 4, death: 0 },
     { state: 'Akwa Ibom', total: 6, recovered: 3, death: 0 },
-    { state: 'Kwara', total: 9, recovered: 0, death: 0 },
+    { state: 'Kwara', total: 9, recovered: 2, death: 0 },
     { state: 'Delta', total: 4, recovered: 0, death: 1 },
     { state: 'Ondo', total: 3, recovered: 0, death: 0 },
     { state: 'Enugu', total: 2, recovered: 2, death: 0 },
-    { state: 'Ekiti', total: 3, recovered: 2, death: 0 },
+    { state: 'Ekiti', total: 4, recovered: 2, death: 0 },
     { state: 'Rivers', total: 2, recovered: 2, death: 0 },
     { state: 'Niger', total: 2, recovered: 0, death: 0 },
     { state: 'Benue', total: 1, recovered: 0, death: 0 },
