@@ -5,10 +5,10 @@ export default {
       quantity: 665,
       info: '1st case: 27/02/2020'
     },
-    // hospitalized: {
-    //   heading: 'Currently Hospitalized',
-    //   quantity: 357
-    // },
+    hospitalized: {
+      heading: 'Currently Hospitalized'
+      // quantity: 357
+    },
     deaths: {
       heading: 'Deaths',
       quantity: 22
@@ -24,7 +24,7 @@ export default {
     { state: 'Kano', total: 59, recovered: 0, death: 1 },
     { state: 'Osun', total: 20, recovered: 18, death: 0 },
     { state: 'Oyo', total: 16, recovered: 5, death: 0 },
-    { state: 'Edo', total: 15, recovered:6, death: 1 },
+    { state: 'Edo', total: 15, recovered: 6, death: 1 },
     { state: 'Ogun', total: 12, recovered: 5, death: 0 },
     { state: 'Katsina', total: 12, recovered: 0, death: 1 },
     { state: 'Kwara', total: 9, recovered: 2, death: 0 },
