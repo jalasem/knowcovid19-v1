@@ -2,56 +2,56 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 4399,
+      quantity: 4641,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-       quantity: 3478
+       quantity: 3589
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 143
+      quantity: 150
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 778
+      quantity: 902
     }
   },
   statesData: [
-    { state: 'Lagos', total: 1845, recovered: 469, death: 33 },
-    { state: 'FCT', total: 356, recovered: 53, death: 6 },
-    { state: 'Kano', total: 602, recovered: 48, death: 26 },
-    { state: 'Ogun', total: 117, recovered: 28, death: 5 },
+    { state: 'Lagos', total: 1933, recovered: 502, death: 33 },
+    { state: 'FCT', total: 359, recovered: 53, death: 6 },
+    { state: 'Kano', total: 666, recovered: 61, death: 32 },
+    { state: 'Ogun', total: 126, recovered: 39, death: 5 },
     { state: 'Osun', total: 39, recovered: 30, death: 4 },
-    { state: 'Gombe', total: 112, recovered: 15, death: 1 },
-    { state: 'Borno', total: 185, recovered: 12, death: 16 },
-    { state: 'Katsina', total: 156, recovered: 16, death: 10 },
+    { state: 'Gombe', total: 118, recovered: 53, death: 1 },
+    { state: 'Borno', total: 186, recovered: 12, death: 16 },
+    { state: 'Katsina', total: 205, recovered: 16, death: 10 },
     { state: 'Edo', total: 79, recovered: 13, death: 4 },
     { state: 'Oyo', total: 65, recovered: 15, death: 2 },
-    { state: 'Bauchi', total: 181, recovered: 6, death: 1 },
+    { state: 'Bauchi', total: 181, recovered: 7, death: 1 },
     { state: 'Kwara', total: 34, recovered: 9, death: 1 },
     { state: 'Akwa Ibom', total: 17, recovered: 10, death: 2 },
-    { state: 'Kaduna', total: 98, recovered: 14, death: 3 },
-    { state: 'Ekiti', total: 15, recovered: 4, death: 1 },
+    { state: 'Kaduna', total: 111, recovered: 17, death: 3 },
+    { state: 'Ekiti', total: 15, recovered: 9, death: 1 },
     { state: 'Taraba', total: 15, recovered: 1, death: 0 },
     { state: 'Delta', total: 17, recovered: 3, death: 3 },
-    { state: 'Ondo', total: 15, recovered: 6, death: 0 },
-    { state: 'Rivers', total: 21, recovered: 4, death: 2 },
+    { state: 'Ondo', total: 16, recovered: 11, death: 1 },
+    { state: 'Rivers', total: 22, recovered: 4, death: 3 },
     { state: 'Enugu', total: 10, recovered: 2, death: 0 },
     { state: 'Niger', total: 6, recovered: 2, death: 0 },
-    { state: 'Jigawa', total: 118, recovered: 0, death: 2 },
-    { state: 'Zamfara', total: 74, recovered: 0, death: 3 },
-    { state: 'Sokoto', total: 106, recovered: 13, death: 12 },
+    { state: 'Jigawa', total: 118, recovered: 4, death: 2 },
+    { state: 'Zamfara', total: 73, recovered: 1, death: 5 },
+    { state: 'Sokoto', total: 106, recovered: 19, death: 12 },
     { state: 'Abia', total: 2, recovered: 1, death: 0 },
     { state: 'Ebonyi', total: 7, recovered: 0, death: 0 },
     { state: 'Benue', total: 2, recovered: 0, death: 0 },
     { state: 'Anambra', total: 1, recovered: 1, death: 0 },
-    { state: 'Plateau', total: 15, recovered: 1, death: 0 },
-    { state: 'Adamawa', total: 15, recovered: 0, death: 0 },
+    { state: 'Plateau', total: 19, recovered: 1, death: 0 },
+    { state: 'Adamawa', total: 21, recovered: 4, death: 0 },
     { state: 'Imo', total: 3, recovered: 1, death: 0 },
     { state: 'Yobe', total: 13, recovered: 0, death: 1 },
-    { state: 'Nasarawa', total: 25, recovered: 0, death: 2 },
+    { state: 'Nasarawa', total: 25, recovered: 0, death: 1 },
     { state: 'Kebbi', total: 24, recovered: 1, death: 3 },
     { state: 'Bayelsa', total: 6, recovered: 0, death: 0 }
   ],
