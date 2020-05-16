@@ -51,7 +51,7 @@ export default {
     { state: 'Adamawa', total: 21, recovered: 11, death: 0 },
     { state: 'Imo', total: 7, recovered: 2, death: 0 },
     { state: 'Yobe', total: 32, recovered: 3, death: 1 },
-    { state: 'Nasarawa', total: 29, recovered: 5, death: 1 },
+    { state: 'Nassarawa', total: 29, recovered: 5, death: 1 },
     { state: 'Kebbi', total: 31, recovered: 11, death: 4 },
     { state: 'Bayelsa', total: 6, recovered: 3, death: 0 }
   ],
