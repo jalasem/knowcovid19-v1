@@ -2,12 +2,12 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 6175,
+      quantity: 6401,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-       quantity: 4339
+       quantity: 4475
     },
     deaths: {
       heading: 'Deaths',
@@ -15,45 +15,45 @@ export default {
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 1644
+      quantity: 1734
     }
   },
   statesData: [
-    { state: 'Lagos', total: 2550, recovered: 556, death: 36 },
-    { state: 'FCT', total: 418, recovered: 108, death: 7 },
-    { state: 'Kano', total: 825, recovered: 111, death: 36 },
-    { state: 'Ogun', total: 145, recovered: 67, death: 5 },
-    { state: 'Osun', total: 42, recovered: 31, death: 4 },
-    { state: 'Gombe', total: 126, recovered: 90, death: 2 },
-    { state: 'Borno', total: 215, recovered: 81, death: 23 },
-    { state: 'Katsina', total: 248, recovered: 29, death: 12 },
-    { state: 'Edo', total: 95, recovered: 35, death: 5 },
-    { state: 'Oyo', total: 118, recovered: 47, death: 4 },
-    { state: 'Bauchi', total: 215, recovered: 69, death: 3 },
-    { state: 'Kwara', total: 58, recovered: 12, death: 1 },
+    { state: 'Lagos', total: 2755, recovered: 565, death: 38 },
+    { state: 'FCT', total: 427, recovered: 108, death: 9 },
+    { state: 'Kano', total: 842, recovered: 119, death: 36 },
+    { state: 'Ogun', total: 178, recovered: 69, death: 6 },
+    { state: 'Osun', total: 42, recovered: 33, death: 4 },
+    { state: 'Gombe', total: 136, recovered: 92, death: 2 },
+    { state: 'Borno', total: 227, recovered: 89, death: 24 },
+    { state: 'Katsina', total: 289, recovered: 29, death: 13 },
+    { state: 'Edo', total: 119, recovered: 35, death: 6 },
+    { state: 'Oyo', total: 143, recovered: 47, death: 4 },
+    { state: 'Bauchi', total: 224, recovered: 112, death: 5 },
+    { state: 'Kwara', total: 65, recovered: 12, death: 1 },
     { state: 'Akwa Ibom', total: 18, recovered: 12, death: 2 },
-    { state: 'Kaduna', total: 142, recovered: 55, death: 3 },
+    { state: 'Kaduna', total: 152, recovered: 70, death: 3 },
     { state: 'Ekiti', total: 19, recovered: 13, death: 1 },
     { state: 'Taraba', total: 17, recovered: 1, death: 0 },
     { state: 'Delta', total: 27, recovered: 12, death: 5 },
-    { state: 'Ondo', total: 20, recovered: 13, death: 1 },
-    { state: 'Rivers', total: 51, recovered: 21, death: 3 },
-    { state: 'Enugu', total: 12, recovered: 2, death: 0 },
+    { state: 'Ondo', total: 20, recovered: 15, death: 1 },
+    { state: 'Rivers', total: 53, recovered: 21, death: 3 },
+    { state: 'Enugu', total: 16, recovered: 6, death: 0 },
     { state: 'Niger', total: 22, recovered: 5, death: 1 },
-    { state: 'Jigawa', total: 201, recovered: 68, death: 3 },
-    { state: 'Zamfara', total: 74, recovered: 34, death: 5 },
-    { state: 'Sokoto', total: 113, recovered: 66, death: 13 },
+    { state: 'Jigawa', total: 205, recovered: 68, death: 3 },
+    { state: 'Zamfara', total: 84, recovered: 46, death: 5 },
+    { state: 'Sokoto', total: 113, recovered: 75, death: 13 },
     { state: 'Abia', total: 5, recovered: 1, death: 0 },
     { state: 'Ebonyi', total: 9, recovered: 1, death: 0 },
     { state: 'Benue', total: 5, recovered: 0, death: 0 },
     { state: 'Anambra', total: 5, recovered: 1, death: 0 },
-    { state: 'Plateau', total: 35, recovered: 10, death: 1 },
-    { state: 'Adamawa', total: 21, recovered: 11, death: 0 },
+    { state: 'Plateau', total: 50, recovered: 14, death: 1 },
+    { state: 'Adamawa', total: 26, recovered: 13, death: 0 },
     { state: 'Imo', total: 7, recovered: 2, death: 0 },
     { state: 'Yobe', total: 32, recovered: 3, death: 1 },
-    { state: 'Nassarawa', total: 31, recovered: 5, death: 1 },
+    { state: 'Nassarawa', total: 34, recovered: 18, death: 1 },
     { state: 'Kebbi', total: 32, recovered: 17, death: 4 },
-    { state: 'Bayelsa', total: 6, recovered: 1, death: 0 }
+    { state: 'Bayelsa', total: 6, recovered: 5, death: 0 }
   ],
   helplines: [
     { state: 'Abia', helplines: ['07002242362', '0700ABIADOC'] },
