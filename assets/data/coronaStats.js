@@ -2,20 +2,20 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 18480,
+      quantity: 19147,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-       quantity: 11698
+       quantity: 12079
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 475
+      quantity: 487
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 6307
+      quantity: 6581
     }
   },
   statesData: [
@@ -30,7 +30,7 @@ export default {
     { state: 'Edo', total: 729, recovered: 160, death: 31 },
     { state: 'Oyo', total: 764, recovered: 281, death: 9 },
     { state: 'Bauchi', total: 438, recovered: 322, death: 11 },
-    { state: 'Kwara', total: 177, recovered: 100, death: 6},
+    { state: 'Kwara', total: 180, recovered: 100, death: 6},
     { state: 'Akwa Ibom', total: 48, recovered: 18, death: 2 },
     { state: 'Kaduna', total: 513, recovered: 286, death: 10 },
     { state: 'Ekiti', total: 30, recovered: 24, death: 2 },
