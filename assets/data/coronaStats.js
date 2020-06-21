@@ -7,7 +7,7 @@ export default {
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-       quantity: 12584
+      quantity: 12584
     },
     deaths: {
       heading: 'Deaths',
@@ -22,7 +22,7 @@ export default {
     { state: 'Lagos', total: 8407, recovered: 1436, death: 123 },
     { state: 'FCT', total: 1549, recovered: 475, death: 28 },
     { state: 'Kano', total: 1184, recovered: 712, death: 50 },
-    { state: 'Ogun', total: 623, recovered: 358, death: 15},
+    { state: 'Ogun', total: 623, recovered: 358, death: 15 },
     { state: 'Osun', total: 54, recovered: 46, death: 4 },
     { state: 'Gombe', total: 451, recovered: 226, death: 14 },
     { state: 'Borno', total: 466, recovered: 353, death: 31 },
@@ -30,7 +30,7 @@ export default {
     { state: 'Edo', total: 779, recovered: 161, death: 31 },
     { state: 'Oyo', total: 860, recovered: 282, death: 9 },
     { state: 'Bauchi', total: 447, recovered: 322, death: 11 },
-    { state: 'Kwara', total: 180, recovered: 122, death: 6},
+    { state: 'Kwara', total: 180, recovered: 122, death: 6 },
     { state: 'Akwa Ibom', total: 65, recovered: 40, death: 2 },
     { state: 'Kaduna', total: 552, recovered: 286, death: 10 },
     { state: 'Ekiti', total: 34, recovered: 28, death: 2 },

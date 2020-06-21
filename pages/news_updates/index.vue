@@ -92,8 +92,10 @@ export default {
     },
     async fetchPosts() {
       try {
+        // const url = 'https://knowcovid19.hiskillsacademy.com/'
+        const url = 'https://fakenews.6starcab.com/'
         const { data } = await this.$axios(
-          'https://cors-anywhere.herokuapp.com/https://knowcovid19.hiskillsacademy.com/wp-json/wp/v2/posts/'
+          `https://cors-anywhere.herokuapp.com/${url}wp-json/wp/v2/posts/`
         )
         if (data.length) this.posts = data
       } catch (err) {

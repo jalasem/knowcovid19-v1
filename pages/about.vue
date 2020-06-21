@@ -10,39 +10,39 @@
 
         <div class="content">
           <p>
-            We are the number one goto organization for quality information about
-            Coronavirus in Africa. We are ensuring provision of adequate, relevant,
-            reliable and relatable information about COVID-19, debunking fake 
-            news and providing safety, health and precautionary tips that could
-            help people stay safe, informed and protected.
+            We are the number one goto organization for quality information
+            about Coronavirus in Africa. We are ensuring provision of adequate,
+            relevant, reliable and relatable information about COVID-19,
+            debunking fake news and providing safety, health and precautionary
+            tips that could help people stay safe, informed and protected.
           </p>
-          
+
           <p>
             We gather data on cases, perceptions, emotions and other relevant
             variables on the Coronavirus. We have a database of information that
             is helping researchers and scholars during and after this outbreak.
           </p>
-          
+
           <p>
-           We share our information through relatable graphics with pictorial
-           designs that attract attention rather than boring long texts that
-           get people bored.
+            We share our information through relatable graphics with pictorial
+            designs that attract attention rather than boring long texts that
+            get people bored.
           </p>
-          
+
           <!--<p>
             The fight against COVID-19 isn't just a fight against the pandemic,
             it has been described as an infodemic war; with several anxiety
             triggering, fear inciting, and scary information being circulated.
           </p> -->
 
-         <!-- <p>
+          <!-- <p>
             Despite over 80,000 recoveries being recorded globally, there is
             more focus on the deaths, and the patients health practitioners are
             unable to save. There is little information about medical testing,
             China closing its last COVID-19 hospitals, and global recoveries.
           </p> -->
 
-         <!-- <p>
+          <!-- <p>
             At Know COVID-19 Nigeria, we will be giving up to date verified
             data, and information relating to the pandemic. We will be doing
             this through summary texts, info graphics, live statistics being
@@ -50,7 +50,7 @@
             relevant organisations.
           </p> -->
 
-        <!--  <p>
+          <!--  <p>
             This will also include a platform for people to report suspected
             cases, connect to emergency hotline in their States, locate testing
             centres, and safety tips.
