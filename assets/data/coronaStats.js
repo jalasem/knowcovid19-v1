@@ -2,25 +2,25 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 24567,
+      quantity: 27110,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-      quantity: 14995
+      quantity: 15693
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 565
+      quantity: 616
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 9007
+      quantity: 10801
     }
   },
   statesData: [
-    { state: 'Lagos', total: 9741, recovered: 1475, death: 126 },
-    { state: 'FCT', total: 1736, recovered: 518, death: 32 },
+    { state: 'Lagos', total: 10823, recovered: 1631, death: 132 },
+    { state: 'FCT', total: 2020, recovered: 608, death: 35 },
     { state: 'Kano', total: 1191, recovered: 818, death: 51 },
     { state: 'Ogun', total: 756, recovered: 498, death: 17 },
     { state: 'Osun', total: 108, recovered: 47, death: 5 },
@@ -28,7 +28,7 @@ export default {
     { state: 'Borno', total: 477, recovered: 387, death: 32 },
     { state: 'Katsina', total: 528, recovered: 267, death: 22 },
     { state: 'Edo', total: 933, recovered: 267, death: 32 },
-    { state: 'Oyo', total: 1264, recovered: 506, death: 10 },
+    { state: 'Oyo', total: 1432, recovered: 703, death: 12 },
     { state: 'Bauchi', total: 497, recovered: 424, death: 12 },
     { state: 'Kwara', total: 217, recovered: 128, death: 6 },
     { state: 'Akwa Ibom', total: 83, recovered: 43, death: 2 },
