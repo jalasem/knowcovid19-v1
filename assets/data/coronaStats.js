@@ -7,7 +7,7 @@ export default {
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-      quantity: 18160
+      quantity: 21091
     },
     deaths: {
       heading: 'Deaths',
@@ -15,7 +15,7 @@ export default {
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 13103
+      quantity: 15333
     }
   },
   statesData: [
