@@ -2,20 +2,20 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 39997,
+      quantity: 40532,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-      quantity: 22173
+      quantity: 22300
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 856
+      quantity: 858
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 16948
+      quantity: 17374
     }
   },
   statesData: [
@@ -54,8 +54,8 @@ export default {
     { state: 'Nassarawa', total: 308, recovered: 113, death: 8 },
     { state: 'Kebbi', total: 90, recovered: 79, death: 7 },
     { state: 'Bayelsa', total: 326, recovered: 251, death: 21 },
-    { state: 'Kogi', total: 5, recovered: 3, death: 2 },
-    { state: 'cross River', total: 37, recovered: 3, death: 1 }
+    { state: 'Kogi', total: 5, recovered: 9, death: 3 },
+    { state: 'cross River', total: 40, recovered: 3, death: 1 }
   ],
   helplines: [
     { state: 'Abia', helplines: ['07002242362', '0700ABIADOC'] },
