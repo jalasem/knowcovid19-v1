@@ -15,7 +15,7 @@ export default {
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 59345
+      quantity: 50768
     }
   },
   statesData: [
