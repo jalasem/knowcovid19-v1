@@ -2,12 +2,12 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 63731,
+      quantity: 63849,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-      quantity: 2732
+      quantity: 2810
     },
     deaths: {
       heading: 'Deaths',
