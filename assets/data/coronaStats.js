@@ -2,20 +2,20 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 63849,
+      quantity: 64090,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-      quantity: 2810
+      quantity: 3026
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 1155
+      quantity: 1154
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 59844
+      quantity: 59910
     }
   },
   statesData: [
@@ -28,7 +28,7 @@ export default {
     { state: 'Borno', total: 745, recovered: 705, death: 36 },
     { state: 'Katsina', total: 948, recovered: 879, death: 24 },
     { state: 'Edo', total: 2654, recovered: 2522, death: 108 },
-    { state: 'Oyo', total: 3423, recovered: 2556, death: 42 },
+    { state: 'Oyo', total: 3433, recovered: 2577, death: 42 },
     { state: 'Bauchi', total: 710, recovered: 696, death: 14 },
     { state: 'Kwara', total: 1069, recovered: 1019, death: 26 },
     { state: 'Akwa Ibom', total: 295, recovered: 284, death: 8 },
