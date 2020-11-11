@@ -11,7 +11,7 @@ export default {
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 1160
+      quantity: 1162
     },
     discharged: {
       heading: 'Discharged',
