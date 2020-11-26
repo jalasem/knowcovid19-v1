@@ -2,12 +2,12 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 66607,
+      quantity: 66805,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-      quantity: 3127
+      quantity: 3143
     },
     deaths: {
       heading: 'Deaths',
@@ -15,12 +15,12 @@ export default {
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 62311
+      quantity: 62493
     }
   },
   statesData: [
-    { state: 'Lagos', total: 23018, recovered: 21741, death: 220 },
-    { state: 'FCT', total: 6576, recovered: 5969, death: 83 },
+    { state: 'Lagos', total: 23066, recovered: 21834, death: 220 },
+    { state: 'FCT', total: 6629, recovered: 5995, death: 83 },
     { state: 'Kano', total: 1777, recovered: 1694, death: 54 },
     { state: 'Ogun', total: 2156, recovered: 2015, death: 31 },
     { state: 'Osun', total: 942, recovered: 906, death: 20 },
