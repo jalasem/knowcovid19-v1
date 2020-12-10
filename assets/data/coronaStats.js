@@ -2,25 +2,25 @@ export default {
   majorStats: {
     total: {
       heading: 'Total Cases',
-      quantity: 70195,
+      quantity: 70669,
       info: '1st case: 27/02/2020'
     },
     hospitalized: {
       heading: 'Currently Hospitalized',
-      quantity: 3903
+      quantity: 4243
     },
     deaths: {
       heading: 'Deaths',
-      quantity: 1182
+      quantity: 1184
     },
     discharged: {
       heading: 'Discharged',
-      quantity: 65110
+      quantity: 65242
     }
   },
   statesData: [
-    { state: 'Lagos', total: 23850, recovered: 23114, death: 227 },
-    { state: 'FCT', total: 7279, recovered: 6273, death: 83 },
+    { state: 'Lagos', total: 24238, recovered: 23218, death: 227 },
+    { state: 'FCT', total: 7716, recovered: 6287, death: 84 },
     { state: 'Kano', total: 1819, recovered: 1713, death: 54 },
     { state: 'Ogun', total: 2258, recovered: 2085, death: 33 },
     { state: 'Osun', total: 947, recovered: 924, death: 21 },
@@ -28,7 +28,7 @@ export default {
     { state: 'Borno', total: 745, recovered: 705, death: 36 },
     { state: 'Katsina', total: 1064, recovered: 1000, death: 24 },
     { state: 'Edo', total: 2717, recovered: 2581, death: 11 },
-    { state: 'Oyo', total: 3742, recovered: 3363, death: 45 },
+    { state: 'Oyo', total: 3747, recovered: 3363, death: 45 },
     { state: 'Bauchi', total: 782, recovered: 742, death: 14 },
     { state: 'Kwara', total: 1110, recovered: 1039, death: 29 },
     { state: 'Akwa Ibom', total: 358, recovered: 321, death: 9 },
@@ -47,7 +47,7 @@ export default {
     { state: 'Ebonyi', total: 1055, recovered: 1019, death: 30 },
     { state: 'Benue', total: 501, recovered: 460, death: 11 },
     { state: 'Anambra', total: 285, recovered: 265, death: 19 },
-    { state: 'Plateau', total: 3914, recovered: 3710, death: 34 },
+    { state: 'Plateau', total: 3937, recovered: 3824, death: 34 },
     { state: 'Adamawa', total: 261, recovered: 238, death: 19 },
     { state: 'Imo', total: 681, recovered: 645, death: 12 },
     { state: 'Yobe', total: 100, recovered: 84, death: 8 },
