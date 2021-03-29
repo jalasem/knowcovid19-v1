@@ -19,8 +19,8 @@ export default {
     }
   },
   statesData: [
-    { state: 'Lagos', total: 49941	, recovered: 42260, death: 329 },
-    { state: 'FCT', total: 17071, recovered: 11000, death: 127 },
+    { state: 'Lagos', total: 57581, recovered: 56990, death: 430 },
+    { state: 'FCT', total: 19617, recovered: 17064, death: 156 },
     { state: 'Kano', total: 2444	, recovered: 2055, death: 70 },
     { state: 'Ogun', total: 2684, recovered: 2352, death: 35 },
     { state: 'Osun', total: 1065, recovered: 978, death: 24 },
