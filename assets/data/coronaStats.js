@@ -19,8 +19,8 @@ export default {
     }
   },
   statesData: [
-    { state: 'Lagos', total: 57581, recovered: 56990, death: 430 },
-    { state: 'FCT', total: 19617, recovered: 17064, death: 156 },
+    { state: 'Lagos', total: 57713, recovered: 56990, death: 439 },
+    { state: 'FCT', total: 19657, recovered: 18042, death: 164 },
     { state: 'Kano', total: 2444	, recovered: 2055, death: 70 },
     { state: 'Ogun', total: 2684, recovered: 2352, death: 35 },
     { state: 'Osun', total: 1065, recovered: 978, death: 24 },
@@ -32,7 +32,7 @@ export default {
     { state: 'Bauchi', total: 1082, recovered: 904, death: 17 },
     { state: 'Kwara', total: 1793, recovered: 1424, death: 38 },
     { state: 'Akwa Ibom', total: 512, recovered: 391, death: 9 },
-    { state: 'Kaduna', total: 7679, recovered: 7296, death: 57 },
+    { state: 'Kaduna', total: 8950, recovered: 8828, death: 65 },
     { state: 'Ekiti', total: 439, recovered: 403, death: 7 },
     { state: 'Taraba', total: 226, recovered: 191, death: 7 },
     { state: 'Delta', total: 1982, recovered: 1737, death: 52 },
@@ -47,7 +47,7 @@ export default {
     { state: 'Ebonyi', total: 1147, recovered: 1072, death: 30 },
     { state: 'Benue', total: 601, recovered: 512, death: 15 },
     { state: 'Anambra', total: 386, recovered: 317, death: 20 },
-    { state: 'Plateau', total: 7982, recovered: 7387, death: 55 },
+    { state: 'Plateau', total: 9027, recovered: 8931, death: 57 },
     { state: 'Adamawa', total: 497, recovered: 238, death: 26 },
     { state: 'Imo', total: 801, recovered: 746, death: 16 },
     { state: 'Yobe', total: 207, recovered: 179, death: 8 },
