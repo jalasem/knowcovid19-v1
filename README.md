@@ -1,6 +1,6 @@
 # KnowCOVID19.ng
 
-> Corona Virsu (COVID-19) Alert/Support/Enlightenment/Stats and help portal
+> Corona Virus (COVID-19) Alert/Support/Enlightenment/Stats and help portal
 
 ## Build Setup
 
